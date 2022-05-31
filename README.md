@@ -1,2 +1,2 @@
 # mi-recipe
-An extraodinary recipe application 
+An extraordinary recipe application 
