@@ -1,0 +1,131 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.MiRecipe" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <!-- Others -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
+        <item name="android:colorBackground">@color/background</item>
+
+        <!-- Customize your theme here. -->
+        <item name="colorControlHighlight">@color/primary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- App Dialog-->
+    <style name="Base.MaterialAlertDialog" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="android:colorAccent">@color/secondary</item>
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Base.AlertDialog.PositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Base.AlertDialog.NegativeButton</item>
+    </style>
+
+    <style name="Base.AlertDialog.PositiveButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="backgroundTint">@color/secondary</item>
+        <item name="rippleColor">@color/ripple</item>
+    </style>
+
+    <style name="Base.AlertDialog.NegativeButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="rippleColor">@color/ripple</item>
+    </style>
+
+    <!-- Root Layouts -->
+    <style name="RootLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="background">@color/background</item>
+    </style>
+
+    <style name="RootLayout.WrapHeight" parent="RootLayout">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RootLayout.WrapWidth" parent="RootLayout">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="RootLayout.Wrap" parent="RootLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <!-- From this line below are styles for components that will be used in the application
+     However, styles that marked as Base should not be used directly
+     Instead, it should be used via children that follow this pattern:
+     Base Style: Base_Material[WidgetType]
+     Child Style: Material[WidgetType].[props]
+     -->
+
+    <!-- Button -->
+    <style name="Base.MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="iconTintMode">multiply</item>
+        <item name="cornerRadius">@dimen/radius_M</item>
+    </style>
+
+    <style name="MaterialButton.Positive" parent="Base.MaterialButton">
+        <item name="backgroundTint">@color/secondary</item>
+        <item name="android:textColor">@color/onSecondary</item>
+        <item name="iconTint">@color/onSecondary</item>
+    </style>
+
+    <style name="MaterialButton.Negative" parent="Base.MaterialButton">
+        <item name="backgroundTint">@color/surfaceSecondary</item>
+        <item name="android:textColor">@color/onSurfaceSecondary</item>
+        <item name="iconTint">@color/onSurfaceSecondary</item>
+    </style>
+
+    <!-- Card View -->
+    <style name="Base.MaterialCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardPreventCornerOverlap">true</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+    </style>
+
+    <style name="MaterialCardView.Radius.M" parent="Base.MaterialCardView">
+        <item name="cardCornerRadius">@dimen/radius_M</item>
+    </style>
+
+    <!-- Text Styles -->
+    <style name="Base.TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">@dimen/pad_M</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Primary" parent="Base.TextAppearance">
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Primary.OnSurface" parent="TextAppearance.Primary">
+        <item name="android:textColor">@color/onSurface</item>
+    </style>
+
+
+</resources>

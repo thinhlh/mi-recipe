@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mi_Recipe.iml" filepath="$PROJECT_DIR$/.idea/modules/Mi_Recipe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Mi_Recipe.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Mi_Recipe.domain.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/Mi_Recipe.utils.unitTest.iml" />
+    </modules>
+  </component>
+</project>

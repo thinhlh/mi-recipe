@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- App config strings-->
+
+    <string name="app_name">Hoang Thinh Mi Recipe</string>
+
+    <!-- App Common Strings-->
+    <string name="text_loading">Loading...</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="txt_call_api">Call API</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="pad_M">@dimen/_8sdp</dimen>
+
+    <dimen name="radius_M">@dimen/_8sdp</dimen>
+
+    <dimen name="elevation">@dimen/_10sdp</dimen>
+
+    <dimen name="h1">@dimen/_24ssp</dimen>
+</resources>
