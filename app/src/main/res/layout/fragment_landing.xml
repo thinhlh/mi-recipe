@@ -1,29 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/primary">
+        android:orientation="vertical"
+        android:weightSum="5">
 
-        <!--        <ImageView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:scaleType="centerCrop"-->
-        <!--            android:src="@drawable/landing_2" />-->
-
-        <TextView
-            style="@style/TextAppearance.Primary"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Welcome to Mi Recipe"
-            android:textColor="@color/surface"
-            android:textSize="@dimen/h1" />
+            android:layout_weight="2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/landing_2" />
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/pad_L"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/pad_M">
+
+            <TextView
+                style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Welcome"
+                android:textColor="@color/onSurface"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pad_M" />
+
+            <TextView
+                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Browse 1000+ unique recipes of different cusines from the best chefs"
+                android:textAlignment="center"
+                android:textColor="@color/textSecondary" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pad_L" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/pad_MM"
+                android:text="I am new"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pad_S" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/pad_MM"
+                android:text="I have been here"
+                android:textAppearance="?attr/textAppearanceButton"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/radius_L"
+                app:strokeColor="@color/primary" />
+        </LinearLayout>
+
+    </LinearLayout>
 </layout>
