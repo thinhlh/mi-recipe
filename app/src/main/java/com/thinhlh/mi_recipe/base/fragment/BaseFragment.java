@@ -7,12 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.thinhlh.mi_recipe.base.activity.BaseActivity;
@@ -147,6 +150,102 @@ public abstract class BaseFragment<T extends ViewDataBinding, VM extends BaseVie
         if (activity != null) {
             activity.showAlert(message, title, positiveText, negativeText, onClickListener, reverseLayout);
         }
+    }
+
+    /**
+     * Get active fragment
+     *
+     * @return
+     */
+    protected Fragment getActiveFragment() {
+        return getNavigator().getActiveFragment();
+    }
+
+    /**
+     * Set fragment to a Container view
+     *
+     * @param containerViewId
+     * @param fragment
+     */
+    protected void setFragmentToContainer(@IdRes int containerViewId, @NonNull Fragment fragment) {
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        transaction.add(containerViewId, fragment).commit();
+    }
+
+    /**
+     * Check if fragment is already in ContainerView then show fragment
+     * else add new one to
+     *
+     * @param containerViewId
+     * @param fragment
+     */
+    protected void showOrAddFragment(
+            @IdRes int containerViewId,
+            Fragment fragment
+    ) {
+        showOrAddFragment(null, containerViewId, fragment);
+    }
+
+    /**
+     * Check if fragment is already in ContainerView then show fragment
+     * else add new one to
+     *
+     * @param containerViewId
+     * @param fragment
+     */
+    protected void showOrAddFragment(
+            FragmentManager fragmentManager,
+            @IdRes int containerViewId,
+            Fragment fragment
+    ) {
+        if (fragment == null) return;
+
+        if (fragmentManager == null)
+            fragmentManager = getChildFragmentManager();
+
+        String fragmentTag = getFragmentTag(fragment);
+
+        Fragment fragmentByTag = fragmentManager.findFragmentByTag(fragmentTag);
+        if (fragmentByTag != null) {
+            //if the fragment exists, show it.
+            fragmentManager.beginTransaction().replace(containerViewId,fragmentByTag).commit();
+        } else {
+            //if the fragment does not exist, add it to fragment manager.
+            fragmentManager.beginTransaction().add(containerViewId, fragment, fragmentTag).commit();
+        }
+    }
+
+    protected void hideFragment(
+            Fragment fragment
+    ) {
+        if (fragment == null) return;
+
+        FragmentManager fragmentManager = getChildFragmentManager();
+        String fragmentTag = getFragmentTag(fragment);
+
+        if (fragmentManager.findFragmentByTag(fragmentTag) != null) {
+            //if the other fragment is visible, hide it.
+            fragmentManager.beginTransaction().hide(fragment).commit();
+        }
+    }
+
+    protected void removeFragment(
+            Fragment fragment
+    ) {
+        if (fragment == null) return;
+
+        FragmentManager fragmentManager = getChildFragmentManager();
+        String fragmentTag = getFragmentTag(fragment);
+
+        if (fragmentManager.findFragmentByTag(fragmentTag) != null) {
+            //if the other fragment is visible, remove it.
+            fragmentManager.beginTransaction().remove(fragment).commit();
+        }
+    }
+
+    @NonNull
+    private String getFragmentTag(@NonNull Fragment fragment) {
+        return fragment.getClass().getSimpleName();
     }
 
     /**

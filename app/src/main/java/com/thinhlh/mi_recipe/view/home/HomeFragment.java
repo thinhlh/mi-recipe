@@ -1,17 +1,26 @@
 package com.thinhlh.mi_recipe.view.home;
 
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.navigation.NavigationBarView;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
-import com.thinhlh.mi_recipe.base.fragment.TransactionDirection;
 import com.thinhlh.mi_recipe.databinding.FragmentHomeBinding;
-import com.thinhlh.mi_recipe.view.landing.LandingFragment;
+import com.thinhlh.mi_recipe.view.dashboard.DashboardFragment;
+import com.thinhlh.mi_recipe.view.explorer.ExplorerFragment;
 
-/**
- * Created by thinhlh on 06/03/2022.
- * Copyright (c). All rights reserved
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeVM> implements HomeUV {
+
+    private final List<Fragment> fragments = new ArrayList<>() {{
+        add(new DashboardFragment());
+        add(new ExplorerFragment());
+    }};
 
     @Override
     protected Integer layoutRes() {
@@ -27,6 +36,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeVM> impl
     protected void initViewModel(HomeVM viewModel) {
         viewModel.init(this);
         binding.setVm(viewModel);
+        showOrAddFragment(binding.fragmentContainerViewTag.getId(), fragments.get(0));
     }
 
     @Override
@@ -41,12 +51,19 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeVM> impl
 
     @Override
     protected void initAction() {
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.home:
+                    showOrAddFragment(binding.fragmentContainerViewTag.getId(), fragments.get(0));
+                    break;
+                case R.id.search:
+                    showOrAddFragment(binding.fragmentContainerViewTag.getId(), fragments.get(1));
+                    break;
+                default:
+                    break;
+            }
 
-    }
-
-    @Override
-    public void updateData(String newData) {
-        binding.text.setText(newData);
-        getNavigator().goTo(new LandingFragment(), TransactionDirection.RTL);
+            return true;
+        });
     }
 }

@@ -17,12 +17,15 @@
         <item name="colorOnError">@color/onError</item>
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/onSurface</item>
-        <item name="android:colorBackground">@color/background</item>
-        <item name="android:background">@color/background</item>
 
         <!-- Customize your theme here. -->
-        <item name="colorControlHighlight">@color/primary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:background">@color/background</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="tabBackground">@color/primary</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="tabIndicatorColor">@color/primary</item>
+
     </style>
 
     <!-- App Dialog-->
@@ -62,6 +65,24 @@
     </style>
 
     <style name="RootLayout.Wrap" parent="RootLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RootLayout.Secondary" parent="RootLayout">
+        <item name="background">@color/surfaceSecondary</item>
+        <item name="android:background">@color/surfaceSecondary</item>
+    </style>
+
+    <style name="RootLayout.Secondary.WrapHeight" parent="RootLayout.Secondary">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="RootLayout.Secondary.WrapWidth" parent="RootLayout.Secondary">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="RootLayout.Secondary.Wrap" parent="RootLayout.Secondary">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -127,6 +148,17 @@
     <style name="TextAppearance.Primary.OnSurface" parent="TextAppearance.Primary">
         <item name="android:textColor">@color/onSurface</item>
     </style>
+
+    <!-- Edit Text-->
+    <style name="FilledBoxEndIconTint" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="endIconTint">@color/onSurface</item>
+    </style>
+
+    <!-- Bottom Navigation -->
+    <!--    <style name="Base.Widget.MaterialComponents.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">-->
+    <!--        <item name="colorPrimary">@color/primary</item>-->
+    <!--        <item name="colorOnPrimary">@color/facebook_background</item>-->
+    <!--    </style>-->
 
 
 </resources>

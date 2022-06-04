@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:text="@string/text_loading"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/onSurface"
             android:textSize="@dimen/_15ssp" />
 
     </LinearLayout>

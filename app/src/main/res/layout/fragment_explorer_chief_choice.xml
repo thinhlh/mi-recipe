@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.thinhlh.mi_recipe.view.explorer.tabs.chief_choice.ChiefChoiceVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pad_M"
+            app:cardBackgroundColor="@color/surfaceSecondary"
+            app:cardCornerRadius="@dimen/radius_M"
+            app:cardElevation="@dimen/elevation_S"
+            app:contentPadding="@dimen/pad_M">
+
+            <LinearLayout style="@style/RootLayout.Secondary.WrapHeight">
+
+                <LinearLayout
+                    style="@style/RootLayout.Secondary.WrapHeight"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/surfaceSecondary"
+                        android:text="Explore Chief's Choice"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/surfaceSecondary"
+                        android:src="@drawable/ic_baseline_close_24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/pad_L" />
+
+                <LinearLayout
+                    style="@style/RootLayout.Secondary.WrapHeight"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        style="@style/RootLayout.Secondary.WrapHeight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:paddingEnd="@dimen/pad_M">
+
+                        <TextView
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/surfaceSecondary"
+                            android:text="A roating selection of the best courses handpicked by the Mi Recipe chiefs" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/pad_MM" />
+
+                        <TextView
+                            style="@style/TextAppearance.MdcTypographyStyles.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/pad_M"
+                            android:background="@color/surfaceSecondary"
+                            android:padding="@dimen/pad_M"
+                            android:text="OK"
+                            android:textColor="@color/primary"
+                            android:textStyle="bold"
+                            app:rippleColor="@android:color/transparent" />
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/surfaceSecondary"
+                        android:src="@drawable/medal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad_M"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/pad_M">
+
+            <TextView
+                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chief's Choice Recipes" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipe_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/pad_M"
+            android:layout_marginTop="@dimen/pad_L"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="20"
+            tools:listitem="@layout/item_explorer_chief_recipe" />
+    </LinearLayout>
+</layout>

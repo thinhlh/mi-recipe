@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginBottom="@dimen/pad_L">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/pad_MM"
+            android:background="@drawable/bg_rounded_surface_secondary_m"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/recipe_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:weightSum="8">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/pad_S"
+                android:layout_marginBottom="@dimen/pad_M"
+                android:layout_weight="6"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_S"
+                app:contentPaddingBottom="@dimen/pad_S"
+                app:contentPaddingLeft="@dimen/pad_L"
+                app:contentPaddingRight="@dimen/pad_S"
+                app:contentPaddingTop="@dimen/pad_S">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Crispy za'atar chicken pilaf with promegranate"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/surface" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/surface"
+                        android:text="50 minutes cooking time for 2 people"
+                        android:textColor="@color/textSubtitle" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/pad_S"
+            android:layout_marginEnd="@dimen/pad_M"
+            android:background="@drawable/bg_rounded_surface_secondary_l"
+            android:drawablePadding="@dimen/pad_S"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/pad_S"
+            android:text="203"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_baseline_favorite_border_24"
+            app:drawableTint="@color/secondary" />
+
+
+    </FrameLayout>
+</layout>

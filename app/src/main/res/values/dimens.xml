@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="elevation_S">@dimen/_2sdp</dimen>
+    <dimen name="elevation_M">@dimen/_4sdp</dimen>
+    <dimen name="elevation_L">@dimen/_8sdp</dimen>
+    <dimen name="elevation_XL">@dimen/_16sdp</dimen>
+
     <dimen name="pad_S">@dimen/_4sdp</dimen>
     <dimen name="pad_M">@dimen/_8sdp</dimen>
     <dimen name="pad_MM">@dimen/_12sdp</dimen>
     <dimen name="pad_L">@dimen/_16sdp</dimen>
+    <dimen name="pad_XL">@dimen/_32sdp</dimen>
+    <dimen name="pad_XXL">@dimen/_48sdp</dimen>
 
+    <dimen name="radius_S">@dimen/_4sdp</dimen>
     <dimen name="radius_M">@dimen/_8sdp</dimen>
     <dimen name="radius_L">@dimen/_12sdp</dimen>
 

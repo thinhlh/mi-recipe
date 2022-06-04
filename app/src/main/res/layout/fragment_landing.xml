@@ -1,80 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.thinhlh.mi_recipe.view.landing.LandingVM" />
+
+        <variable
+            name="item"
+            type="com.thinhlh.mi_recipe.view.landing.LandingItem" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="5">
+        android:orientation="vertical">
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:scaleType="centerCrop"
-            android:src="@drawable/landing_2" />
+            android:paddingTop="@dimen/pad_M">
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/pad_M"
+                    android:layout_height="@dimen/pad_M"
+                    android:layout_marginHorizontal="@dimen/pad_S"
+                    android:background="@{vm.currentPage==0? @drawable/bg_circle_selected : @drawable/bg_circle_unselected}"
+                    tools:background="@drawable/bg_circle_selected" />
+
+                <View
+                    android:layout_width="@dimen/pad_M"
+                    android:layout_height="@dimen/pad_M"
+                    android:layout_marginHorizontal="@dimen/pad_S"
+                    android:background="@{vm.currentPage==1? @drawable/bg_circle_selected : @drawable/bg_circle_unselected}"
+                    tools:background="@drawable/bg_circle_unselected" />
+
+                <View
+                    android:layout_width="@dimen/pad_M"
+                    android:layout_height="@dimen/pad_M"
+                    android:layout_marginHorizontal="@dimen/pad_S"
+                    android:background="@{vm.currentPage==2? @drawable/bg_circle_selected : @drawable/bg_circle_unselected}"
+                    tools:background="@drawable/bg_circle_unselected" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                app:rippleColor="@color/ripple"
+                android:onClick="@{()->vm.onSkipClick()}"
+                android:text="Skip" />
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/pad_L"
-            android:layout_weight="3"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/pad_M">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_landing" />
 
-            <TextView
-                style="@style/TextAppearance.MdcTypographyStyles.Headline4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Welcome"
-                android:textColor="@color/onSurface"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/pad_M" />
-
-            <TextView
-                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Browse 1000+ unique recipes of different cusines from the best chefs"
-                android:textAlignment="center"
-                android:textColor="@color/textSecondary" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/pad_L" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/pad_MM"
-                android:text="I am new"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/pad_S" />
-
-            <com.google.android.material.button.MaterialButton
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/pad_MM"
-                android:text="I have been here"
-                android:textAppearance="?attr/textAppearanceButton"
-                android:textStyle="bold"
-                app:cornerRadius="@dimen/radius_L"
-                app:strokeColor="@color/primary" />
-        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pad_L"
+            android:layout_marginBottom="@dimen/pad_MM"
+            android:onClick="@{()->vm.onButtonClick()}"
+            android:paddingVertical="@dimen/pad_MM"
+            android:text="Get Started"
+            android:textAppearance="?attr/textAppearanceButton"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/radius_L"
+            app:strokeColor="@color/primary" />
 
     </LinearLayout>
 </layout>

@@ -2,7 +2,7 @@
 
     <!-- App config strings-->
 
-    <string name="app_name">Hoang Thinh Mi Recipe</string>
+    <string name="app_name">Mi Recipe</string>
 
     <!-- App Common Strings-->
     <string name="text_loading">Loading...</string>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/pad_M"
+        app:cardCornerRadius="@dimen/radius_M"
+        app:cardElevation="0dp"
+        app:rippleColor="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_150sdp"
+                    android:foreground="@drawable/fg_bottom_blur_dark"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/recipe_1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/pad_S"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/pad_M">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        app:tint="@color/surface" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/pad_S"
+                        android:background="@android:color/transparent"
+                        android:text="203"
+                        android:textColor="@color/surface"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_baseline_access_time_24"
+                        app:tint="@color/surface" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/pad_S"
+                        android:background="@android:color/transparent"
+                        android:text="50 minutes"
+                        android:textColor="@color/surface"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/surfaceSecondary"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/pad_M"
+                android:paddingVertical="@dimen/pad_M">
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/surfaceSecondary"
+                    android:text="Tomato Pasta"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/pad_S"
+                    android:background="@color/surfaceSecondary"
+                    android:text="Vegetarian • Spicy"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/surfaceSecondary"
+                    android:text="4.8 ☆" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

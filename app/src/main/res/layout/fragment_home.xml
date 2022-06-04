@@ -12,30 +12,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="bottom"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/text"
+        <androidx.fragment.app.FragmentContainerView
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:id="@+id/fragment_container_view_tag"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textColor="@color/onSurface"
-            android:textSize="@dimen/_20ssp" />
-
-        <include layout="@layout/spacing_vertical" />
-
-        <com.google.android.material.button.MaterialButton
-            style="@style/MaterialButton.Negative"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:elevation="@dimen/elevation"
-            android:onClick="@{()->vm.onTextClicked()}"
-            android:text="@string/txt_call_api"
-            app:backgroundTint="#23B9FA" />
+            android:background="@color/background"
+            app:elevation="0dp"
+            app:itemRippleColor="@color/ripple"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu" />
 
     </LinearLayout>
 </layout>

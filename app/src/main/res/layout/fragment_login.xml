@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.thinhlh.mi_recipe.view.login.LoginVM" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="4">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/mi_recipe" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/pad_L">
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/pad_S"
+                    android:text="@{vm.isLogin? `Login to your account` : `Create your account`}"
+                    android:textColor="@color/onSurface"
+                    android:textStyle="bold"
+                    tools:text="Login to your account" />
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/pad_S"
+                    android:text="@{vm.isLogin? `It is nice to see you again!`: `Discover our delicous recipes and features!`}"
+                    android:textStyle="bold"
+                    tools:text="It is nice yo see you again" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_surface_secondary_s"
+                    android:paddingEnd="@dimen/pad_M">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/surfaceSecondary"
+                        app:boxCornerRadiusBottomStart="@dimen/radius_S"
+                        app:boxCornerRadiusTopStart="@dimen/radius_S"
+                        app:boxStrokeWidth="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            android:inputType="textEmailAddress" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/surfaceSecondary"
+                        android:src="@drawable/ic_baseline_email_24"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_L"
+                    android:background="@drawable/bg_rounded_surface_secondary_s"
+                    android:paddingEnd="@dimen/pad_M"
+                    android:visibility="@{vm.isLogin ? View.GONE : View.VISIBLE}">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/surfaceSecondary"
+                        app:boxCornerRadiusBottomStart="@dimen/radius_S"
+                        app:boxCornerRadiusTopStart="@dimen/radius_S"
+                        app:boxStrokeWidth="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            android:inputType="textPersonName" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/surfaceSecondary"
+                        android:src="@drawable/ic_baseline_person_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_L"
+                    android:background="@drawable/bg_rounded_surface_secondary_s"
+                    android:paddingEnd="@dimen/pad_M"
+                    tools:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/surfaceSecondary"
+                        app:boxCornerRadiusBottomStart="@dimen/radius_S"
+                        app:boxCornerRadiusTopStart="@dimen/radius_S"
+                        app:boxStrokeWidth="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            android:inputType="textEmailAddress" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/surfaceSecondary"
+                        android:src="@drawable/ic_baseline_visibility_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_L"
+                    android:background="@drawable/bg_rounded_surface_secondary_s"
+                    android:paddingEnd="@dimen/pad_M"
+                    android:visibility="@{vm.isLogin ? View.GONE : View.VISIBLE}"
+                    tools:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/surfaceSecondary"
+                        app:boxCornerRadiusBottomStart="@dimen/radius_S"
+                        app:boxCornerRadiusTopStart="@dimen/radius_S"
+                        app:boxStrokeWidth="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Confirm Password"
+                            android:inputType="textPassword" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="match_parent"
+                        android:background="@color/surfaceSecondary"
+                        android:src="@drawable/ic_baseline_visibility_24" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:text="By signing up, I accepts the term of use and privacy statement. The service is for VN only."
+                    android:visibility="@{vm.isLogin ? View.GONE : View.VISIBLE}"
+                    tools:visibility="gone" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_L"
+                    android:elevation="@dimen/elevation_M"
+                    android:onClick="@{()->vm.isLogin? vm.login() : vm.signUp()}"
+                    android:paddingVertical="@dimen/pad_MM"
+                    android:text="@{vm.isLogin? `Sign In` : `Sign Up`}"
+                    tools:text="Sign Up" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/pad_L" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/pad_L"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/pad_XL">
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/pad_L"
+                        android:text="Or Sign In With"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingVertical="@dimen/pad_M"
+                        android:text="Facebook"
+                        app:backgroundTint="@color/facebook_background"
+                        app:cornerRadius="@dimen/radius_S"
+                        app:elevation="@dimen/pad_M"
+                        app:icon="@drawable/ic_facebook"
+                        app:iconSize="@dimen/pad_L"
+                        app:iconTint="@null" />
+
+
+                    <View
+                        android:layout_width="@dimen/pad_L"
+                        android:layout_height="0dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:elevation="@dimen/elevation_M"
+                        android:paddingVertical="@dimen/pad_M"
+                        android:src="@drawable/ic_baseline_visibility_24"
+                        android:text="Google"
+                        android:textColor="@color/textPrimary"
+                        app:backgroundTint="@color/google_background"
+                        app:cornerRadius="@dimen/radius_S"
+                        app:icon="@drawable/ic_google"
+                        app:iconSize="@dimen/pad_L"
+                        app:iconTint="@null" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/pad_L" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/pad_L"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{ vm.isLogin? `Don't have an account? ` : `Already have an account? `}"
+                        tools:text="Don't have an account? " />
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{()->vm.switchForm()}"
+                        android:text="@{vm.isLogin? `Sign Up` : `Sign In`}"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        tools:text="Sign Up" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>
