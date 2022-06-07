@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe" />
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.Wrap"
+        android:layout_width="@dimen/_100sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            app:cardCornerRadius="@dimen/radius_L"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:adjustViewBounds="true"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/recipe_1" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Crispy za'atar chicken pilaf with promegranate" />
+
+        <TextView
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="203 ☆" />
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.thinhlh.mi_recipe.view.others.adapters.Setting" />
+    </data>
+
+    <LinearLayout
+        style="@style/RootLayout.Secondary.WrapHeight"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/pad_M"
+        tools:layout_marginBottom="@dimen/pad_M">
+
+        <TextView
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/surfaceSecondary"
+            android:text="@{item.title}"
+            tools:text="Edit Profile" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            app:showText="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{item.isSwitch? View.VISIBLE : View.GONE}" />
+
+        <ImageView
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:background="@color/surfaceSecondary"
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:visibility="@{item.isSwitch? View.GONE : View.VISIBLE}"
+            app:tint="@color/textSecondary" />
+
+    </LinearLayout>
+</layout>

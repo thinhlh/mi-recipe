@@ -19,7 +19,7 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
 
     @Override
     protected void initView() {
-        getNavigator().setRootFragment(new LandingFragment());
+        getNavigator().setRootFragment(new HomeFragment());
     }
 
     @Override

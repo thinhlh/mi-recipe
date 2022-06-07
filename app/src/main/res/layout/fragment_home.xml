@@ -12,25 +12,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
+        android:fitsSystemWindows="true"
         android:orientation="vertical">
 
         <androidx.fragment.app.FragmentContainerView
-            android:layout_weight="1"
-            android:layout_gravity="center"
             android:id="@+id/fragment_container_view_tag"
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp"
+            android:layout_gravity="start|center_horizontal"
+            android:layout_weight="1" />
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/background"
+            android:layout_gravity="bottom"
+            android:background="@color/transparent"
             app:elevation="0dp"
-            app:itemRippleColor="@color/ripple"
-            app:labelVisibilityMode="labeled"
+            app:itemRippleColor="@color/transparent"
             app:menu="@menu/bottom_navigation_menu" />
+
 
     </LinearLayout>
 </layout>

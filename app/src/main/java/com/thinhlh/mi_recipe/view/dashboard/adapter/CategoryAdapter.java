@@ -1,5 +1,6 @@
 package com.thinhlh.mi_recipe.view.dashboard.adapter;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
@@ -12,8 +13,12 @@ import java.util.Objects;
 
 public class CategoryAdapter extends BaseBindingListAdapter<Category> {
 
-    public CategoryAdapter(@Nullable BaseItemClickListener<Category> itemClickListener) {
+    private final @LayoutRes
+    Integer categoryLayout;
+
+    public CategoryAdapter(@Nullable BaseItemClickListener<Category> itemClickListener, Integer categoryLayout) {
         super(new DiffCallback(), itemClickListener);
+        this.categoryLayout = categoryLayout;
     }
 
     private static class DiffCallback extends DiffUtil.ItemCallback<Category> {
@@ -31,6 +36,6 @@ public class CategoryAdapter extends BaseBindingListAdapter<Category> {
 
     @Override
     protected Integer getViewType(int position) {
-        return R.layout.item_category;
+        return categoryLayout;
     }
 }

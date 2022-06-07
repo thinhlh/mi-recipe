@@ -19,6 +19,7 @@
     <color name="onSecondary">#FFFFFF</color>
 
     <!-- Other Colors-->
+    <color name="transparent">#00000000</color>
     <color name="surface">#EEEEEE</color>
     <color name="onSurface">#000000</color>
     <color name="surfaceSecondary">#FAFAFA</color>
@@ -30,7 +31,7 @@
     <color name="background">@color/surface</color>
 
     <color name="textPrimary">#000000</color>
-    <color name="textSecondary">#404040</color>
+    <color name="textSecondary">#707070</color>
     <color name="textSubtitle">#606060</color>
     <color name="disabled">#AAFFFFFF</color>
 

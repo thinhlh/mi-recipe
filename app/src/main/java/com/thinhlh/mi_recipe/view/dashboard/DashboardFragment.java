@@ -8,7 +8,12 @@ import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
 
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
+
 import java.util.ArrayList;
+import java.util.List;
+
+import me.relex.circleindicator.CircleIndicator2;
 
 public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, DashboardVM> implements DashboardUV {
 
@@ -35,7 +40,7 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
     protected void initView() {
         categoryAdapter = new CategoryAdapter((item, adapterPosition) -> {
 
-        });
+        }, R.layout.item_category);
 
         binding.categoryRv.setAdapter(categoryAdapter);
 
@@ -44,6 +49,7 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
         }), R.layout.item_dashboard_recipe);
         binding.recipeRv.setAdapter(recipeAdapter);
 
+        initCarousel();
     }
 
     @Override
@@ -65,6 +71,25 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
             add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
             add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
         }});
+    }
+
+    private void initCarousel() {
+        var carousel = binding.carousel;
+        carousel.registerLifecycle(getLifecycle());
+
+        var carouselData = new ArrayList<CarouselItem>() {{
+            add(new CarouselItem(R.drawable.landing_1));
+
+            add(new CarouselItem(R.drawable.landing_2));
+
+            add(new CarouselItem(R.drawable.landing_3));
+
+            add(new CarouselItem(R.drawable.landing_4));
+
+            add(new CarouselItem(R.drawable.landing_5));
+        }};
+
+        carousel.setData(carouselData);
     }
 
     @Override

@@ -208,7 +208,7 @@ public abstract class BaseFragment<T extends ViewDataBinding, VM extends BaseVie
         Fragment fragmentByTag = fragmentManager.findFragmentByTag(fragmentTag);
         if (fragmentByTag != null) {
             //if the fragment exists, show it.
-            fragmentManager.beginTransaction().replace(containerViewId,fragmentByTag).commit();
+            fragmentManager.beginTransaction().show(fragmentByTag).commit();
         } else {
             //if the fragment does not exist, add it to fragment manager.
             fragmentManager.beginTransaction().add(containerViewId, fragment, fragmentTag).commit();

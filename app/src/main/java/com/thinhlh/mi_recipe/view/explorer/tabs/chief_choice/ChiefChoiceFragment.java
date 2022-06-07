@@ -3,8 +3,10 @@ package com.thinhlh.mi_recipe.view.explorer.tabs.chief_choice;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.divider.MaterialDividerItemDecoration;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
+import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentExplorerChiefChoiceBinding;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
@@ -36,6 +38,7 @@ public class ChiefChoiceFragment extends BaseFragment<FragmentExplorerChiefChoic
         recipeAdapter = new RecipeAdapter(((item, adapterPosition) -> {
 
         }), R.layout.item_explorer_chief_recipe);
+
         binding.recipeRv.setLayoutManager(new LinearLayoutManager(fragmentContext) {
 
             @Override
@@ -45,10 +48,11 @@ public class ChiefChoiceFragment extends BaseFragment<FragmentExplorerChiefChoic
 
             @Override
             public boolean checkLayoutParams(RecyclerView.LayoutParams lp) {
-                lp.width = getWidth() * 9 / 10;
+                lp.width = (int) (getWidth() * 8.5 / 10);
                 return true;
             }
         });
+        binding.recipeRv.addItemDecoration(new SpacingItemDecoration(fragmentContext, MaterialDividerItemDecoration.HORIZONTAL, R.dimen.pad_M));
         binding.recipeRv.setAdapter(recipeAdapter);
     }
 

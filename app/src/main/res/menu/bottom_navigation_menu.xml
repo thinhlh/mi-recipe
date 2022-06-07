@@ -3,15 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home"
-        android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
         android:iconTint="@color/secondary"
         android:title="Home" />
 
     <item
         android:id="@+id/search"
-        android:enabled="true"
         android:icon="@drawable/ic_baseline_search_24"
         android:iconTint="@color/secondary"
         android:title="Search" />
+
+    <item
+        android:id="@+id/my_recipes"
+        android:icon="@drawable/ic_baseline_grading_24"
+        android:iconTint="@color/secondary"
+        android:title="My Recipes" />
+
+    <item
+        android:id="@+id/others"
+        android:icon="@drawable/ic_baseline_menu_24"
+        android:iconTint="@color/secondary"
+        android:title="Others" />
 </menu>

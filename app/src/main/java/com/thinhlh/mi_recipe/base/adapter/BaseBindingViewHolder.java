@@ -14,10 +14,10 @@ import com.thinhlh.mi_recipe.BR;
  * Created by thinhlh on 02/03/2022.
  * Copyright (c). All rights reserved
  */
-class BaseBindingViewHolder<T> extends RecyclerView.ViewHolder {
+public class BaseBindingViewHolder<T> extends RecyclerView.ViewHolder {
 
     private T item;
-    private final ViewDataBinding binding;
+    protected final ViewDataBinding binding;
     private @Nullable
     BaseItemClickListener<T> onItemClick;
 
@@ -46,5 +46,9 @@ class BaseBindingViewHolder<T> extends RecyclerView.ViewHolder {
                 onItemClick.onItemClick(item, getAdapterPosition());
             }
         });
+    }
+
+    public ViewDataBinding getBinding() {
+        return binding;
     }
 }

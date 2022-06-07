@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/pad_M"
@@ -63,11 +63,12 @@
 
 
         <androidx.viewpager2.widget.ViewPager2
-            android:saveEnabled="false"
             android:id="@+id/pager"
             android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:saveEnabled="false" />
 
     </LinearLayout>
 

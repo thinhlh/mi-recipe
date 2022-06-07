@@ -11,6 +11,8 @@
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_landing.xml" value="0.264" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_landing_1.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/bg_circle_avatar.xml" value="0.1465" />
+        <entry key="app/src/main/res/drawable/bg_circle_unselected.xml" value="0.1925" />
         <entry key="app/src/main/res/drawable/bg_rounded_4_sdp.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/bg_rounded_s.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/bg_rounded_secondary_surface_s.xml" value="0.206" />
@@ -29,17 +31,29 @@
         <entry key="app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.187" />
         <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.3351851851851852" />
         <entry key="app/src/main/res/layout/dialog_loading.xml" value="0.1573321932449765" />
+        <entry key="app/src/main/res/layout/fragment_all_recipes.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_explorer.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_explorer.xml" value="0.38812154696132595" />
+        <entry key="app/src/main/res/layout/fragment_explorer_categories.xml" value="0.2361111111111111" />
         <entry key="app/src/main/res/layout/fragment_explorer_chief_choice.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_explorer_popular.xml" value="0.31805555555555554" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.30823830519115086" />
+        <entry key="app/src/main/res/layout/fragment_explorer_popular.xml" value="0.4090247452692867" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_landing.xml" value="0.30495758056640626" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/fragment_my_recipes.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_others.xml" value="0.17885375494071146" />
+        <entry key="app/src/main/res/layout/fragment_top_chart.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_top_ratings.xml" value="0.2361111111111111" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.31712962962962965" />
-        <entry key="app/src/main/res/layout/item_dashboard_recipe.xml" value="0.49646643109540634" />
+        <entry key="app/src/main/res/layout/item_category_top_chart.xml" value="0.2361111111111111" />
+        <entry key="app/src/main/res/layout/item_dashboard_recipe.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_explorer_category.xml" value="0.23703703703703705" />
         <entry key="app/src/main/res/layout/item_explorer_chief_recipe.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_group_setting.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_landing.xml" value="0.2993535359700521" />
+        <entry key="app/src/main/res/layout/item_recipe_small.xml" value="0.31805555555555554" />
+        <entry key="app/src/main/res/layout/item_recipe_top_chart.xml" value="0.3765432098765432" />
+        <entry key="app/src/main/res/layout/item_setting.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2361111111111111" />
       </map>
     </option>

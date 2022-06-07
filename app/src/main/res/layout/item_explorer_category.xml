@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Category" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        app:rippleColor="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:cardCornerRadius="@dimen/radius_L">
+
+        <LinearLayout
+            style="@style/RootLayout.Secondary.WrapHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/landing_4" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/pad_M" />
+
+            <TextView
+                style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_M"
+                android:text="Dinner"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:backgroundTint="@color/surfaceSecondary" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

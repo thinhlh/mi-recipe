@@ -25,6 +25,7 @@
         <item name="tabBackground">@color/primary</item>
         <item name="rippleColor">@android:color/transparent</item>
         <item name="tabIndicatorColor">@color/primary</item>
+        <item name="android:fitsSystemWindows">true</item>
 
     </style>
 
