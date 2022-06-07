@@ -70,6 +70,7 @@
                         app:boxStrokeWidth="0dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Email"
@@ -103,6 +104,7 @@
                         app:boxStrokeWidth="0dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Name"
@@ -135,6 +137,7 @@
                         app:boxStrokeWidth="0dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Password"
@@ -168,6 +171,7 @@
                         app:boxStrokeWidth="0dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password_confirm"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Confirm Password"

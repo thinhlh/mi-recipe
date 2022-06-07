@@ -7,6 +7,7 @@ import com.thinhlh.mi_recipe.view.dashboard.adapter.Category;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
+import com.thinhlh.mi_recipe.view.recipe_detail.RecipeDetailFragment;
 
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 
@@ -45,7 +46,7 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
         binding.categoryRv.setAdapter(categoryAdapter);
 
         recipeAdapter = new RecipeAdapter(((item, adapterPosition) -> {
-
+            getNavigator().goTo(new RecipeDetailFragment());
         }), R.layout.item_dashboard_recipe);
         binding.recipeRv.setAdapter(recipeAdapter);
 

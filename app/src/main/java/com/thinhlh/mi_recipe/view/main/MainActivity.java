@@ -6,6 +6,7 @@ import com.thinhlh.mi_recipe.base.fragment.FragmentNavigator;
 import com.thinhlh.mi_recipe.databinding.ActivityMainBinding;
 import com.thinhlh.mi_recipe.view.home.HomeFragment;
 import com.thinhlh.mi_recipe.view.landing.LandingFragment;
+import com.thinhlh.mi_recipe.view.login.LoginFragment;
 
 /**
  * Created by thinhlh on 06/03/2022.
@@ -19,7 +20,7 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
 
     @Override
     protected void initView() {
-        getNavigator().setRootFragment(new HomeFragment());
+        getNavigator().setRootFragment(new LoginFragment());
     }
 
     @Override
@@ -29,7 +30,7 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
 
     @Override
     protected void initActions() {
-
+        viewModel.initRetrofitService();
     }
 
     @Override
@@ -45,5 +46,12 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
     @Override
     protected FragmentNavigator createFragmentNavigator() {
         return new FragmentNavigator(getSupportFragmentManager(), R.id.fragment_container_view_tag);
+    }
+
+    @Override
+    public void apiTimeOut() {
+        showError("API Timeout", () -> {
+
+        });
     }
 }

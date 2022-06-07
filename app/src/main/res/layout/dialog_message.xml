@@ -37,7 +37,9 @@
 
     </data>
 
-    <com.google.android.material.card.MaterialCardView style="@style/MaterialCardView.Radius.M">
+    <com.google.android.material.card.MaterialCardView
+        style="@style/MaterialCardView.Radius.M"
+        app:cardBackgroundColor="@color/transparent">
 
         <LinearLayout
             style="@style/RootLayout.WrapHeight"
@@ -59,6 +61,7 @@
 
             <TextView
                 style="@style/TextAppearance.Primary.OnSurface"
+                android:layout_marginHorizontal="@dimen/pad_M"
                 android:gravity="center"
                 android:scrollbars="vertical"
                 android:text="@{message}"

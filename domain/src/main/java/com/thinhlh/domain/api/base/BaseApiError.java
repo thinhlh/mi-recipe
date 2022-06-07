@@ -19,7 +19,6 @@ abstract class BaseApiError {
 
         if (!apiResponse.isSuccessful()) {
             final ResponseBody errorBody = apiResponse.errorBody();
-
             try {
                 final String responseString = errorBody != null ? errorBody.string() : "";
 

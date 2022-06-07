@@ -42,9 +42,9 @@ public final class RetrofitService {
     // Local variables
     private Runnable timeOut;
 
-    private final HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new ApiLogger()).setLevel(
-            Const.DEBUG_MODE ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE
-    );
+    private final HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new ApiLogger())
+            .setLevel(Const.DEBUG_MODE ? HttpLoggingInterceptor.Level.HEADERS : HttpLoggingInterceptor.Level.NONE)
+            .setLevel(Const.DEBUG_MODE ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE);
 
     private BearerTokenInterceptor bearerTokenInterceptor;
 

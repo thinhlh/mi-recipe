@@ -5,4 +5,12 @@ import com.thinhlh.mi_recipe.base.userview.BaseUserView;
 
 public interface LoginUV extends BaseUserView {
     void goToHome();
+
+    String getEmailField();
+
+    String getPasswordField();
+
+    String getConfirmPasswordField();
+
+    String getNameField();
 }

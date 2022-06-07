@@ -49,9 +49,6 @@ public class SettingGroupAdapter extends BaseBindingListAdapter<SettingGroup> {
 
         var rv = ((ItemGroupSettingBinding) holder.getBinding()).recyclerView;
         rv.setAdapter(settingAdapter);
-        rv.addItemDecoration(new MaterialDividerItemDecoration(holder.itemView.getContext(), MaterialDividerItemDecoration.VERTICAL) {{
-            setLastItemDecorated(false);
-        }});
 
         settingAdapter.submitList(getItem(position).getSettings());
     }

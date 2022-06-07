@@ -42,4 +42,24 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginVM> i
     public void goToHome() {
         getNavigator().goTo(new HomeFragment());
     }
+
+    @Override
+    public String getEmailField() {
+        return binding.email.getText().toString();
+    }
+
+    @Override
+    public String getPasswordField() {
+        return binding.password.getText().toString();
+    }
+
+    @Override
+    public String getConfirmPasswordField() {
+        return binding.passwordConfirm.getText().toString();
+    }
+
+    @Override
+    public String getNameField() {
+        return binding.name.getText().toString();
+    }
 }

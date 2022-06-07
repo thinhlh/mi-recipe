@@ -1,6 +1,7 @@
 package com.thinhlh.domain.api.base;
 
 import com.thinhlh.domain.api.RetrofitService;
+import com.thinhlh.domain.api.services.AuthService;
 import com.thinhlh.domain.api.services.CommonService;
 
 /**
@@ -10,4 +11,5 @@ import com.thinhlh.domain.api.services.CommonService;
  */
 public abstract class BaseApi extends BaseApiError {
     protected CommonService commonService = RetrofitService.get().createService(CommonService.class);
+    protected AuthService authService = RetrofitService.get().createService(AuthService.class);
 }

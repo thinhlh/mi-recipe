@@ -33,6 +33,7 @@
     <style name="Base.MaterialAlertDialog" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
         <item name="android:colorAccent">@color/secondary</item>
         <item name="android:textColor">@color/onSecondary</item>
+        <item name="android:background">@color/transparent</item>
         <item name="buttonBarPositiveButtonStyle">@style/Base.AlertDialog.PositiveButton</item>
         <item name="buttonBarNegativeButtonStyle">@style/Base.AlertDialog.NegativeButton</item>
     </style>

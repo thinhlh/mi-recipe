@@ -6,6 +6,7 @@ import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentOthersBinding;
+import com.thinhlh.mi_recipe.view.landing.LandingFragment;
 import com.thinhlh.mi_recipe.view.others.adapters.Setting;
 import com.thinhlh.mi_recipe.view.others.adapters.SettingAdapter;
 import com.thinhlh.mi_recipe.view.others.adapters.SettingGroup;
@@ -71,5 +72,12 @@ public class OthersFragment extends BaseFragment<FragmentOthersBinding, OthersVM
     @Override
     protected void initAction() {
 
+    }
+
+    @Override
+    public void goToLandingPage() {
+        getNavigator().setRootFragment(new LandingFragment());
+        getNavigator().goToRoot();
+        getNavigator().clearHistory();
     }
 }

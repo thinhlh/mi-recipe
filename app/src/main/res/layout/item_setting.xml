@@ -17,6 +17,7 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/pad_M"
+        android:paddingVertical="@dimen/pad_M"
         tools:layout_marginBottom="@dimen/pad_M">
 
         <TextView
@@ -33,10 +34,10 @@
             android:layout_weight="1" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
-            app:showText="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="@{item.isSwitch? View.VISIBLE : View.GONE}" />
+            android:layout_height="@dimen/_12sdp"
+            android:visibility="@{item.isSwitch? View.VISIBLE : View.GONE}"
+            app:showText="false" />
 
         <ImageView
             android:layout_width="@dimen/_12sdp"
