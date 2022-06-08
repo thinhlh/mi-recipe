@@ -10,6 +10,8 @@
             type="com.thinhlh.mi_recipe.view.login.LoginVM" />
 
         <import type="android.view.View" />
+
+        <import type="android.text.InputType" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -141,7 +143,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Password"
-                            android:inputType="textEmailAddress" />
+                            android:inputType='@{!vm.passwordShow ? (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD) : InputType.TYPE_CLASS_TEXT }' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -149,7 +151,8 @@
                         android:layout_width="@dimen/_16sdp"
                         android:layout_height="match_parent"
                         android:background="@color/surfaceSecondary"
-                        android:src="@drawable/ic_baseline_visibility_24" />
+                        android:onClick="@{()->vm.changePasswordVisibility()}"
+                        android:src="@{ vm.passwordShow? @drawable/ic_baseline_visibility_24 : @drawable/ic_baseline_visibility_off_24}" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -175,7 +178,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Confirm Password"
-                            android:inputType="textPassword" />
+                            android:inputType='@{!vm.confirmPasswordShow ? (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD) : InputType.TYPE_CLASS_TEXT }' />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -183,7 +186,8 @@
                         android:layout_width="@dimen/_16sdp"
                         android:layout_height="match_parent"
                         android:background="@color/surfaceSecondary"
-                        android:src="@drawable/ic_baseline_visibility_24" />
+                        android:onClick="@{()->vm.changePasswordConfirmationVisibility()}"
+                        android:src="@{ vm.confirmPasswordShow? @drawable/ic_baseline_visibility_24 : @drawable/ic_baseline_visibility_off_24}" />
                 </LinearLayout>
 
                 <TextView

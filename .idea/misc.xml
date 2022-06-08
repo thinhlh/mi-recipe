@@ -3,70 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
-        <entry key="../../../../Library/Android/sdk/platforms/android-32/data/res/drawable/btn_minus.xml" value="0.187" />
+        <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.1" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/font/roboto.xml" value="0.225" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/font/roboto_slab.xml" value="0.225" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/font/roboto_thin.xml" value="0.225" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_landing.xml" value="0.264" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_landing_1.xml" value="0.25" />
-        <entry key="app/src/main/res/drawable/bg_circle_avatar.xml" value="0.1465" />
-        <entry key="app/src/main/res/drawable/bg_circle_red.xml" value="0.1795" />
-        <entry key="app/src/main/res/drawable/bg_circle_unselected.xml" value="0.1925" />
-        <entry key="app/src/main/res/drawable/bg_rounded_4_sdp.xml" value="0.161" />
-        <entry key="app/src/main/res/drawable/bg_rounded_s.xml" value="0.139" />
-        <entry key="app/src/main/res/drawable/bg_rounded_secondary_surface_s.xml" value="0.206" />
-        <entry key="app/src/main/res/drawable/bg_rounded_surface_4sdp.xml" value="0.272" />
-        <entry key="app/src/main/res/drawable/bg_rounded_surface_s.xml" value="0.206" />
-        <entry key="app/src/main/res/drawable/bg_rounded_surface_secondary_l.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/bg_rounded_surface_secondary_m.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/bg_rounded_surface_secondary_s.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/circle_selected.xml" value="0.14" />
-        <entry key="app/src/main/res/drawable/circle_unselected.xml" value="0.14" />
-        <entry key="app/src/main/res/drawable/fg_bottom_blur.xml" value="0.14" />
-        <entry key="app/src/main/res/drawable/fg_bottom_blur_dark.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/fg_top_bottom_blur_background.xml" value="0.1465" />
-        <entry key="app/src/main/res/drawable/fg_top_bottom_blur_dark.xml" value="0.1465" />
-        <entry key="app/src/main/res/drawable/fragment_home.xml" value="0.1745" />
-        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/ic_baseline_search_24_primary.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.187" />
-        <entry key="app/src/main/res/layout/dashboard_fragment.xml" value="0.3351851851851852" />
-        <entry key="app/src/main/res/layout/dialog_loading.xml" value="0.32778049646763274" />
-        <entry key="app/src/main/res/layout/dialog_message.xml" value="0.2649978072554977" />
-        <entry key="app/src/main/res/layout/fragment_all_recipes.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_explorer.xml" value="0.38812154696132595" />
-        <entry key="app/src/main/res/layout/fragment_explorer_categories.xml" value="0.2361111111111111" />
-        <entry key="app/src/main/res/layout/fragment_explorer_chief_choice.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_explorer_popular.xml" value="0.4090247452692867" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_landing.xml" value="0.30495758056640626" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.24410583496093763" />
-        <entry key="app/src/main/res/layout/fragment_my_recipes.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_others.xml" value="0.17885375494071146" />
-        <entry key="app/src/main/res/layout/fragment_recipe_detail.xml" value="0.28645412066510617" />
-        <entry key="app/src/main/res/layout/fragment_top_chart.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_top_ratings.xml" value="0.2361111111111111" />
-        <entry key="app/src/main/res/layout/item_category.xml" value="0.31712962962962965" />
-        <entry key="app/src/main/res/layout/item_category_top_chart.xml" value="0.2361111111111111" />
-        <entry key="app/src/main/res/layout/item_dashboard_recipe.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/item_direction.xml" value="0.3823163138231631" />
-        <entry key="app/src/main/res/layout/item_explorer_category.xml" value="0.23703703703703705" />
-        <entry key="app/src/main/res/layout/item_explorer_chief_recipe.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_group_setting.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_ingredient.xml" value="0.31712962962962965" />
-        <entry key="app/src/main/res/layout/item_landing.xml" value="0.2993535359700521" />
-        <entry key="app/src/main/res/layout/item_recipe_small.xml" value="0.31805555555555554" />
-        <entry key="app/src/main/res/layout/item_recipe_top_chart.xml" value="0.3765432098765432" />
-        <entry key="app/src/main/res/layout/item_setting.xml" value="0.25" />
-        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2361111111111111" />
+        <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_login.xml" value="0.1" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK" />
 </project>

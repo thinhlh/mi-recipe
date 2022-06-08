@@ -16,6 +16,8 @@ import com.thinhlh.utils.helper.AppPreferences;
 public class LoginVM extends BaseRepoViewModel<AuthRepo, LoginUV> {
 
     public final MutableLiveData<Boolean> isLogin = new MutableLiveData<>(true);
+    public final MutableLiveData<Boolean> passwordShow = new MutableLiveData<>(false);
+    public final MutableLiveData<Boolean> confirmPasswordShow = new MutableLiveData<>(false);
 
     public void login() {
         String email = uiCallback.getEmailField();
@@ -80,6 +82,14 @@ public class LoginVM extends BaseRepoViewModel<AuthRepo, LoginUV> {
             });
         }
 
+    }
+
+    public void changePasswordVisibility() {
+        passwordShow.postValue(Boolean.FALSE.equals(passwordShow.getValue()));
+    }
+
+    public void changePasswordConfirmationVisibility() {
+        confirmPasswordShow.postValue(Boolean.FALSE.equals(confirmPasswordShow.getValue()));
     }
 
     public void switchForm() {
