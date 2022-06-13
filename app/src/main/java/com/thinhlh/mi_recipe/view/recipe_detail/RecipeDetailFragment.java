@@ -1,23 +1,37 @@
 package com.thinhlh.mi_recipe.view.recipe_detail;
 
+import android.os.Bundle;
+
 import com.google.android.material.divider.MaterialDividerItemDecoration;
+import com.thinhlh.domain.repository.recipe.Direction;
+import com.thinhlh.domain.repository.recipe.Recipe;
 import com.thinhlh.mi_recipe.R;
-import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentRecipeDetailBinding;
-import com.thinhlh.mi_recipe.view.recipe_detail.adapters.Direction;
 import com.thinhlh.mi_recipe.view.recipe_detail.adapters.DirectionAdapter;
-import com.thinhlh.mi_recipe.view.recipe_detail.adapters.Ingredient;
 import com.thinhlh.mi_recipe.view.recipe_detail.adapters.IngredientAdapter;
 
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 
 import java.util.ArrayList;
-
-import me.relex.circleindicator.CircleIndicator2;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class RecipeDetailFragment extends BaseFragment<FragmentRecipeDetailBinding, RecipeDetailVM> implements RecipeDetailUV {
+
+    private static final String RECIPE_KEY = "RECIPE_KEY";
+
+    public static RecipeDetailFragment getInstance(Recipe recipe) {
+        var instance = new RecipeDetailFragment();
+        var bundle = new Bundle();
+
+        bundle.putSerializable(RECIPE_KEY, recipe);
+
+        instance.setArguments(bundle);
+
+        return instance;
+    }
 
     private IngredientAdapter ingredientAdapter;
     private DirectionAdapter directionAdapter;
@@ -50,15 +64,7 @@ public class RecipeDetailFragment extends BaseFragment<FragmentRecipeDetailBindi
         carousel.registerLifecycle(getLifecycle());
 
         var carouselData = new ArrayList<CarouselItem>() {{
-            add(new CarouselItem(R.drawable.landing_1));
 
-            add(new CarouselItem(R.drawable.landing_2));
-
-            add(new CarouselItem(R.drawable.landing_3));
-
-            add(new CarouselItem(R.drawable.landing_4));
-
-            add(new CarouselItem(R.drawable.landing_5));
         }};
 
         carousel.setData(carouselData);
@@ -82,18 +88,14 @@ public class RecipeDetailFragment extends BaseFragment<FragmentRecipeDetailBindi
 
     @Override
     protected void initData() {
-        ingredientAdapter.submitList(new ArrayList<>() {{
-            add(new Ingredient("Title", 1, "pc"));
-            add(new Ingredient("Title", 1, "pc"));
-            add(new Ingredient("Title", 1, "pc"));
-            add(new Ingredient("Title", 1, "pc"));
-        }});
+        if (getArguments() != null) {
+            Recipe recipe = (Recipe) getArguments().getSerializable(RECIPE_KEY);
+            viewModel.recipe.postValue(recipe);
+            directionAdapter.submitList(recipe.getDirections());
+            ingredientAdapter.submitList(recipe.getIngredients());
+            binding.carousel.addData(new CarouselItem(recipe.getThumbnail()));
+        }
 
-        directionAdapter.submitList(new ArrayList<>() {{
-            add(new Direction("Title", 1));
-            add(new Direction("Title", 1));
-            add(new Direction("Title", 1));
-        }});
     }
 
     @Override

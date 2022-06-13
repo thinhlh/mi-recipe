@@ -59,10 +59,10 @@ public class OthersFragment extends BaseFragment<FragmentOthersBinding, OthersVM
                 add(new Setting("Language", false, () -> {
 
                 }));
-                add(new Setting("Saved Courses", false, () -> {
+                add(new Setting("Saved Recipes", false, () -> {
 
                 }));
-                add(new Setting("Dark Mode", true, () -> {
+                add(new Setting("Licenses", false, () -> {
 
                 }));
             }}));

@@ -1,11 +1,11 @@
 package com.thinhlh.mi_recipe.view.dashboard;
 
+import com.thinhlh.domain.repository.category.Category;
+import com.thinhlh.domain.repository.recipe.Recipe;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.databinding.FragmentDashboardBinding;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Category;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
 import com.thinhlh.mi_recipe.view.recipe_detail.RecipeDetailFragment;
 
@@ -13,8 +13,6 @@ import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import me.relex.circleindicator.CircleIndicator2;
 
 public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, DashboardVM> implements DashboardUV {
 
@@ -46,7 +44,7 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
         binding.categoryRv.setAdapter(categoryAdapter);
 
         recipeAdapter = new RecipeAdapter(((item, adapterPosition) -> {
-            getNavigator().goTo(new RecipeDetailFragment());
+            getNavigator().goTo(RecipeDetailFragment.getInstance(item));
         }), R.layout.item_dashboard_recipe);
         binding.recipeRv.setAdapter(recipeAdapter);
 
@@ -55,23 +53,7 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
 
     @Override
     protected void initData() {
-        categoryAdapter.submitList(new ArrayList<>() {{
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-        }});
-
-        recipeAdapter.submitList(new ArrayList<>() {{
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-        }});
+        viewModel.getCategories();
     }
 
     private void initCarousel() {
@@ -96,5 +78,15 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
     @Override
     protected void initAction() {
 
+    }
+
+    @Override
+    public void updateCategories(List<Category> categories) {
+        categoryAdapter.submitList(categories);
+    }
+
+    @Override
+    public void updatePopularRecipes(List<Recipe> recipes) {
+        recipeAdapter.submitList(recipes);
     }
 }

@@ -5,6 +5,7 @@ import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.databinding.FragmentLoginBinding;
 import com.thinhlh.mi_recipe.view.home.HomeFragment;
 import com.thinhlh.mi_recipe.view.test.TestFragment;
+import com.thinhlh.utils.helper.SystemHelper;
 
 public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginVM> implements LoginUV {
     @Override
@@ -36,6 +37,11 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginVM> i
     @Override
     protected void initAction() {
 
+    }
+
+    @Override
+    public void hideKeyboard() {
+        SystemHelper.toggleSoftInput(fragmentContext, false);
     }
 
     @Override

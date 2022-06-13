@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.thinhlh.mi_recipe.view.create_recipe.adapter.CreateIngredient" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_M"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:boxBackgroundColor="@color/surfaceSecondary"
+            app:boxCornerRadiusBottomStart="@dimen/radius_S"
+            app:boxCornerRadiusTopStart="@dimen/radius_S"
+            app:boxStrokeWidth="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingredientQuantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:text="@{String.valueOf(item.quantity)}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_marginStart="@dimen/pad_S"
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="@dimen/pad_M"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rounded_surface_secondary_s"
+            android:gravity="center"
+            android:text="123" />
+
+        <View
+            android:layout_width="@dimen/pad_S"
+            android:layout_height="match_parent" />
+
+        <Spinner
+            tools:layout_weight="1"
+            android:id="@+id/action_bar_spinner"
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="@dimen/pad_M"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rounded_surface_secondary_s" />
+
+        <ImageView
+            android:id="@+id/endIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/pad_S"
+            tools:src="@drawable/ic_baseline_add_24" />
+
+    </LinearLayout>
+</layout>

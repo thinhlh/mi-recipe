@@ -1,15 +1,14 @@
 package com.thinhlh.mi_recipe.view.explorer.tabs.top_ratings;
 
+import com.thinhlh.domain.repository.recipe.Recipe;
 import com.thinhlh.mi_recipe.R;
-import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.databinding.FragmentTopChartBinding;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Category;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
+import com.thinhlh.mi_recipe.view.recipe_detail.RecipeDetailFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TopChartFragment extends BaseFragment<FragmentTopChartBinding, TopChartVM> implements TopChartUV {
 
@@ -34,7 +33,7 @@ public class TopChartFragment extends BaseFragment<FragmentTopChartBinding, TopC
     @Override
     protected void initView() {
         recipeAdapter = new RecipeAdapter((item, adapterPosition) -> {
-
+            getNavigator().goTo(RecipeDetailFragment.getInstance(item));
         }, R.layout.item_recipe_top_chart);
 
         binding.categoryRv.setAdapter(recipeAdapter);
@@ -42,18 +41,16 @@ public class TopChartFragment extends BaseFragment<FragmentTopChartBinding, TopC
 
     @Override
     protected void initData() {
-        recipeAdapter.submitList(new ArrayList<>() {{
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-        }});
+        viewModel.getTopChartRecipes();
     }
 
     @Override
     protected void initAction() {
 
+    }
+
+    @Override
+    public void updateRecipes(List<Recipe> recipes) {
+        recipeAdapter.submitList(recipes);
     }
 }

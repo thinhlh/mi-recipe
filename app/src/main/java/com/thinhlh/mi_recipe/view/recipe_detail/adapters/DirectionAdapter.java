@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
 
+import com.thinhlh.domain.repository.recipe.Direction;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.adapter.BaseBindingListAdapter;
 import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
@@ -19,7 +20,7 @@ public class DirectionAdapter extends BaseBindingListAdapter<Direction> {
 
         @Override
         public boolean areContentsTheSame(@NonNull Direction oldItem, @NonNull Direction newItem) {
-            return oldItem.getTitle().equals(newItem.getTitle());
+            return oldItem.getContent().equals(newItem.getContent());
         }
     }
 

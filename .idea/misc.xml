@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.30845323741007197" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.1" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/font/roboto.xml" value="0.225" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/font/roboto_slab.xml" value="0.225" />
@@ -11,9 +12,37 @@
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_landing.xml" value="0.264" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_landing_1.xml" value="0.25" />
         <entry key="..\:/Data/Learning/java/mi-recipe/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_circle_avatar.xml" value="0.1595" />
+        <entry key="app/src/main/res/drawable/bg_dash.xml" value="0.9" />
+        <entry key="app/src/main/res/layout/bg_dash_line.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/dialog_message.xml" value="0.3770833333333333" />
+        <entry key="app/src/main/res/layout/fragment_create_recipe.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_explorer_chief_choice.xml" value="0.3770833333333333" />
+        <entry key="app/src/main/res/layout/fragment_explorer_popular.xml" value="0.10191082802547771" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_my_recipes.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_recipe_detail.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_category.xml" value="0.3067708333333333" />
+        <entry key="app/src/main/res/layout/item_create_recipe_direction.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/item_create_recipe_ingredient.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_dashboard_recipe.xml" value="0.3067708333333333" />
+        <entry key="app/src/main/res/layout/item_direction.xml" value="0.21039276123046877" />
+        <entry key="app/src/main/res/layout/item_explorer_chief_recipe.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/item_ingredient.xml" value="0.47962962962962963" />
+        <entry key="app/src/main/res/layout/item_recipe_explorer_popular.xml" value="0.35555555555555557" />
+        <entry key="app/src/main/res/layout/item_recipe_small.xml" value="0.3578125" />
+        <entry key="app/src/main/res/layout/item_recipe_top_chart.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_select_ingredient.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/item_spinner.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/xml/file_paths.xml" value="0.3770833333333333" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
 </project>

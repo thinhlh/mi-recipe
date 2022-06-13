@@ -22,4 +22,6 @@
     <dimen name="h1">@dimen/_24ssp</dimen>
     <dimen name="h2">@dimen/_16ssp</dimen>
     <dimen name="h3">@dimen/_12ssp</dimen>
+
+    <dimen name="imageHeight">@dimen/_150sdp</dimen>
 </resources>

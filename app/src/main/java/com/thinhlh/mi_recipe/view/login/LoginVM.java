@@ -12,6 +12,7 @@ import com.thinhlh.domain.repository.base.BaseRepoCallback;
 import com.thinhlh.mi_recipe.base.viewmodel.BaseRepoViewModel;
 import com.thinhlh.utils.helper.AppPreferenceKeys;
 import com.thinhlh.utils.helper.AppPreferences;
+import com.thinhlh.utils.helper.SystemHelper;
 
 public class LoginVM extends BaseRepoViewModel<AuthRepo, LoginUV> {
 
@@ -25,8 +26,9 @@ public class LoginVM extends BaseRepoViewModel<AuthRepo, LoginUV> {
         getRepo().login(new LoginRequest(email, password), new BaseRepoCallback<BaseResponse<Tokens>>() {
 
             @Override
-            public void apiRequesting(Boolean showLoading) {
-                showLoading(showLoading);
+            public void apiRequesting(Boolean show) {
+                uiCallback.hideKeyboard();
+                showLoading(show);
             }
 
             @Override
@@ -66,8 +68,8 @@ public class LoginVM extends BaseRepoViewModel<AuthRepo, LoginUV> {
                     password
             ), new BaseRepoCallback<>() {
                 @Override
-                public void apiRequesting(Boolean showLoading) {
-                    showLoading(showLoading);
+                public void apiRequesting(Boolean show) {
+                    showLoading(show);
                 }
 
                 @Override

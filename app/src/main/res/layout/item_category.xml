@@ -6,21 +6,21 @@
 
         <variable
             name="item"
-            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Category" />
+            type="com.thinhlh.domain.repository.category.Category" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="@dimen/_150sdp"
+        android:layout_width="@dimen/imageHeight"
         android:layout_height="@dimen/_70sdp"
         android:layout_marginEnd="@dimen/pad_M"
         app:cardCornerRadius="@dimen/radius_S">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:foreground="#70000000"
             android:scaleType="centerCrop"
-            android:src="@drawable/landing_3" />
+            android:src="@{item.thumbnail}" />
 
         <TextView
             style="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
@@ -29,7 +29,7 @@
             android:layout_gravity="center"
             android:backgroundTint="@android:color/transparent"
             android:letterSpacing="0.5"
-            android:text="Dinner"
+            android:text="@{item.title}"
             android:textAllCaps="true"
             android:textColor="@color/onSecondary"
             android:textStyle="bold" />

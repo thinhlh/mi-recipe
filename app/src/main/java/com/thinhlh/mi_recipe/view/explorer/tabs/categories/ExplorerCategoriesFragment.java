@@ -1,16 +1,15 @@
 package com.thinhlh.mi_recipe.view.explorer.tabs.categories;
 
-import android.graphics.Color;
-
 import com.google.android.material.divider.MaterialDividerItemDecoration;
+import com.thinhlh.domain.repository.category.Category;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentExplorerCategoriesBinding;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Category;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExplorerCategoriesFragment extends BaseFragment<FragmentExplorerCategoriesBinding, ExplorerCategoriesVM> implements ExplorerCategoriesUV {
 
@@ -48,15 +47,13 @@ public class ExplorerCategoriesFragment extends BaseFragment<FragmentExplorerCat
     }
 
     @Override
+    public void updateCategories(List<Category> categories) {
+        categoryAdapter.submitList(categories);
+    }
+
+    @Override
     protected void initData() {
-        categoryAdapter.submitList(new ArrayList<>() {{
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-            add(new Category("Dinner", "Thumbnail"));
-        }});
+        viewModel.getCategories();
     }
 
     @Override

@@ -49,7 +49,7 @@ public class ExplorerFragment extends BaseFragment<FragmentExplorerBinding, Expl
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void initView() {
-        ExplorerViewPagerAdapter pagerAdapter = new ExplorerViewPagerAdapter(getParentFragmentManager(), getLifecycle());
+        ExplorerViewPagerAdapter pagerAdapter = new ExplorerViewPagerAdapter(getChildFragmentManager(), getLifecycle());
         binding.pager.setAdapter(pagerAdapter);
         binding.pager.setUserInputEnabled(false);
 

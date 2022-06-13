@@ -11,5 +11,4 @@ public class ExplorerViewPagerAdapter extends FragmentPagerAdapter {
         super(fragmentManager, lifecycle);
     }
 
-
 }

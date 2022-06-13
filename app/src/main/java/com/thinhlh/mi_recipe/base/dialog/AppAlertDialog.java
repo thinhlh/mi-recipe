@@ -51,6 +51,18 @@ public class AppAlertDialog extends BaseDialog {
             @Nullable AlertDialogOnClickListener onClickListener,
             @Nullable Boolean reverseLayout
     ) {
+        show(message, title, positiveText, negativeText, onClickListener, reverseLayout, false);
+    }
+
+    public void show(
+            @NonNull String message,
+            @Nullable String title,
+            @Nullable String positiveText,
+            @Nullable String negativeText,
+            @Nullable AlertDialogOnClickListener onClickListener,
+            @Nullable Boolean reverseLayout,
+            @Nullable Boolean cancellable
+    ) {
         if (context != null) {
             final AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
@@ -61,7 +73,7 @@ public class AppAlertDialog extends BaseDialog {
             );
 
             builder
-                    .setCancelable(false)
+                    .setCancelable(cancellable)
                     .setView(binding.getRoot());
 
             // Setup binding values
@@ -97,6 +109,7 @@ public class AppAlertDialog extends BaseDialog {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         }
     }
+
 
     public void show(
             @NonNull String message,

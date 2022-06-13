@@ -39,6 +39,7 @@
 
     <com.google.android.material.card.MaterialCardView
         style="@style/MaterialCardView.Radius.M"
+        app:cardUseCompatPadding="false"
         app:cardBackgroundColor="@color/transparent">
 
         <LinearLayout

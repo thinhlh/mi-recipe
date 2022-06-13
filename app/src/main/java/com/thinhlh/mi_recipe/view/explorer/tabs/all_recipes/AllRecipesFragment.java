@@ -1,17 +1,13 @@
 package com.thinhlh.mi_recipe.view.explorer.tabs.all_recipes;
 
-import android.graphics.Color;
 import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.divider.MaterialDividerItemDecoration;
 import com.thinhlh.mi_recipe.R;
-import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentAllRecipesBinding;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
 
 import java.util.ArrayList;
@@ -55,14 +51,7 @@ public class AllRecipesFragment extends BaseFragment<FragmentAllRecipesBinding, 
 
     @Override
     protected void initData() {
-        recipeAdapter.submitList(new ArrayList<>() {{
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-        }});
+
     }
 
     @Override

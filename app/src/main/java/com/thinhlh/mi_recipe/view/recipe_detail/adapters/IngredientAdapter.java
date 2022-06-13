@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
 
+import com.thinhlh.domain.repository.recipe.Ingredient;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.adapter.BaseBindingListAdapter;
 import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;

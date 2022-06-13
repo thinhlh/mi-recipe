@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <TextView
+        android:id="@+id/title"
+        android:background="@color/transparent"
+        android:paddingVertical="@dimen/pad_M"
+        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center">
+
+    </TextView>
+</layout>

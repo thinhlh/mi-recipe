@@ -7,7 +7,6 @@ import androidx.lifecycle.LifecycleObserver;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.orhanobut.logger.AndroidLogAdapter;
-import com.orhanobut.logger.BuildConfig;
 import com.orhanobut.logger.Logger;
 import com.thinhlh.utils.helper.AppPreferences;
 import com.thinhlh.utils.helper.NotificationUtils;
@@ -19,7 +18,7 @@ import com.thinhlh.utils.helper.NotificationUtils;
 public class App extends Application implements LifecycleObserver {
 
     private static Context appContext;
-    private static final String PACKAGE_NAME = BuildConfig.APPLICATION_ID;
+    public static final String PACKAGE_NAME = BuildConfig.APPLICATION_ID;
     private static final String CHANNEL_ID = PACKAGE_NAME + ".channelId";
     private static final String CHANNEL_NAME = PACKAGE_NAME + ".channelName";
 
@@ -42,7 +41,7 @@ public class App extends Application implements LifecycleObserver {
         Logger.addLogAdapter(new AndroidLogAdapter());
 
         // Disable Firebase Crashlytics in DEBUG mode
-        if (BuildConfig.DEBUG) {
+        if (com.orhanobut.logger.BuildConfig.DEBUG) {
             FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false);
         }
 

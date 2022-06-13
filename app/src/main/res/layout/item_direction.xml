@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="item"
+            type="com.thinhlh.domain.repository.recipe.Direction" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -17,9 +21,10 @@
         app:rippleColor="@color/transparent">
 
         <LinearLayout
+            android:paddingVertical="@dimen/pad_M"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="start"
             android:orientation="horizontal">
 
             <TextView
@@ -29,15 +34,17 @@
                 android:layout_gravity="top"
                 android:background="@drawable/bg_circle_red"
                 android:gravity="center"
-                android:text="1"
+                android:text="@{String.valueOf(item.order)}"
                 android:textColor="@color/surface"
-                android:textSize="@dimen/_10ssp" />
+                android:textSize="@dimen/_10ssp"
+                tools:text="1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/pad_S"
-                android:text="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
+                android:text="@{item.content}"
+                tools:text="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
 
         </LinearLayout>
 

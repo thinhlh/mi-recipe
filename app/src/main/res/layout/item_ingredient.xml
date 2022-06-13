@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="item"
+            type="com.thinhlh.domain.repository.recipe.Ingredient" />
     </data>
 
     <LinearLayout
@@ -20,10 +23,11 @@
             app:cardCornerRadius="@dimen/_50sdp" />
 
         <TextView
-            android:layout_marginStart="@dimen/pad_M"
             style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="255g kidney bean" />
+            android:layout_marginStart="@dimen/pad_M"
+            android:text="@{item.quantity + item.unit + ` ` + item.title}"
+            tools:text="255g kidney bean" />
     </LinearLayout>
 </layout>

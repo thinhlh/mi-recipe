@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe" />
+            type="com.thinhlh.domain.repository.recipe.Recipe" />
     </data>
 
     <LinearLayout
@@ -14,9 +14,9 @@
         android:layout_width="@dimen/_100sdp">
 
         <com.google.android.material.card.MaterialCardView
-            app:cardCornerRadius="@dimen/radius_L"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/radius_L">
 
             <ImageView
                 android:layout_width="match_parent"

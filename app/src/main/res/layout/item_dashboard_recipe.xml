@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="item"
+            type="com.thinhlh.domain.repository.recipe.Recipe" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
 
-        android:layout_height="@dimen/_150sdp"
+        android:layout_height="@dimen/imageHeight"
         android:layout_marginBottom="@dimen/pad_L">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/pad_MM"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/pad_MM"
             android:background="@drawable/bg_rounded_surface_secondary_m"
-            android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/recipe_1" />
+            android:src="@{item.thumbnail}"
+            tools:src="@drawable/recipe_1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,16 +55,18 @@
                         style="@style/TextAppearance.MaterialComponents.Headline6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Crispy za'atar chicken pilaf with promegranate"
+                        android:text="@{item.title}"
                         android:textStyle="bold"
-                        app:backgroundTint="@color/surface" />
+                        app:backgroundTint="@color/surface"
+                        tools:text="Crispy za'atar chicken pilaf with promegranate" />
 
                     <TextView
                         style="@style/TextAppearance.MaterialComponents.Body2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/surface"
-                        android:text="50 minutes cooking time for 2 people"
+                        android:text="@{ item.takenTime + ` minutes cooking time for ` + item.people + ` people`}"
+                        tools:text="50 minutes cooking time for 2 people"
                         android:textColor="@color/textSubtitle" />
                 </LinearLayout>
 

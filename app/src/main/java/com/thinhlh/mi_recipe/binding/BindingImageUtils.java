@@ -1,17 +1,28 @@
 package com.thinhlh.mi_recipe.binding;
 
 
+import android.app.Application;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.ImageView;
 
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.BindingAdapter;
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideOption;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.BaseRequestOptions;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
+import com.squareup.picasso.Picasso;
 import com.thinhlh.mi_recipe.R;
 
 public class BindingImageUtils {
@@ -19,13 +30,13 @@ public class BindingImageUtils {
     public static void loadImageFromUrl(ImageView imageView, String src) {
         if (src == null) return;
         var context = imageView.getContext();
-
         //Unable to use placeholder here as it wont show image
         Glide.with(context)
+                .applyDefaultRequestOptions(new RequestOptions())
                 .load(src)
                 .placeholder(startLoadingProgress(context))
-                .error(R.mipmap.ic_launcher_round)
                 .thumbnail(0.5f)
+                .error(R.drawable.landing_3)
                 .centerCrop()
                 .into(imageView);
     }
@@ -47,7 +58,7 @@ public class BindingImageUtils {
     }
 
     @BindingAdapter("android:src")
-    public static void setImageResource(ImageView imageView, int resource){
+    public static void setImageResource(ImageView imageView, int resource) {
         imageView.setImageResource(resource);
     }
 }

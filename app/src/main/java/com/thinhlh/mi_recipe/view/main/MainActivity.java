@@ -1,5 +1,8 @@
 package com.thinhlh.mi_recipe.view.main;
 
+import android.os.Handler;
+import android.os.Looper;
+
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.activity.BaseFragmentBindingActivity;
 import com.thinhlh.mi_recipe.base.fragment.FragmentNavigator;
@@ -20,7 +23,7 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
 
     @Override
     protected void initView() {
-        getNavigator().setRootFragment(new LoginFragment());
+        getNavigator().setRootFragment(new HomeFragment());
     }
 
     @Override
@@ -50,8 +53,15 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
 
     @Override
     public void apiTimeOut() {
-        showError("API Timeout", () -> {
+        new Handler(Looper.getMainLooper()).post(() -> {
+            showError("API Timeout", () -> {
 
+            });
         });
+    }
+
+    @Override
+    public void onFragmentBackPressed() {
+        onBackPressed();
     }
 }

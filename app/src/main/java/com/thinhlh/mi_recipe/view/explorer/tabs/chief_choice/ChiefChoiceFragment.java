@@ -4,14 +4,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.divider.MaterialDividerItemDecoration;
+import com.thinhlh.domain.repository.recipe.Recipe;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentExplorerChiefChoiceBinding;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
+import com.thinhlh.mi_recipe.view.recipe_detail.RecipeDetailFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChiefChoiceFragment extends BaseFragment<FragmentExplorerChiefChoiceBinding, ChiefChoiceVM> implements ChiefChoiceUV {
 
@@ -36,7 +38,7 @@ public class ChiefChoiceFragment extends BaseFragment<FragmentExplorerChiefChoic
     @Override
     protected void initView() {
         recipeAdapter = new RecipeAdapter(((item, adapterPosition) -> {
-
+            getNavigator().goTo(RecipeDetailFragment.getInstance(item));
         }), R.layout.item_explorer_chief_recipe);
 
         binding.recipeRv.setLayoutManager(new LinearLayoutManager(fragmentContext) {
@@ -58,18 +60,16 @@ public class ChiefChoiceFragment extends BaseFragment<FragmentExplorerChiefChoic
 
     @Override
     protected void initData() {
-        recipeAdapter.submitList(new ArrayList<>() {{
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-        }});
+        viewModel.getChiefChoiceRecipes();
     }
 
     @Override
     protected void initAction() {
 
+    }
+
+    @Override
+    public void updateRecipes(List<Recipe> recipes) {
+        recipeAdapter.submitList(recipes);
     }
 }

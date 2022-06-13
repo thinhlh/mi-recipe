@@ -53,6 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/transparent"
+                        android:onClick="@{()->vm.onBackPressed()}"
                         android:src="@drawable/ic_baseline_arrow_back_24"
                         app:tint="@color/surfaceSecondary" />
 
@@ -82,10 +83,11 @@
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/pad_M"
                     android:background="@color/transparent"
-                    android:text="Strawberry Smoothies"
+                    android:text="@{vm.recipe.title}"
                     android:textAlignment="center"
                     android:textColor="@color/surface"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Strawberry Smoothies" />
 
 
             </LinearLayout>
@@ -107,7 +109,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/pad_M"
-                    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+                    android:text="@{vm.recipe.description}"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -122,13 +125,15 @@
 
                     <LinearLayout
                         style="@style/RootLayout.Wrap"
+                        android:layout_weight="1"
                         android:gravity="center">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:src="@drawable/ic_baseline_person_24" />
+                            android:src="@drawable/ic_baseline_person_24"
+                            app:tint="@color/secondary" />
 
                         <View
                             android:layout_width="0dp"
@@ -140,7 +145,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:text="8-12" />
+                            android:text="@{String.valueOf(vm.recipe.people)}"
+                            tools:text="8-12" />
 
                     </LinearLayout>
 
@@ -160,13 +166,15 @@
 
                     <LinearLayout
                         style="@style/RootLayout.Wrap"
+                        android:layout_weight="1"
                         android:gravity="center">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:src="@drawable/ic_baseline_access_time_24" />
+                            android:src="@drawable/ic_baseline_access_time_24"
+                            app:tint="@color/secondary" />
 
                         <View
                             android:layout_width="0dp"
@@ -178,7 +186,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:text="20 min" />
+                            android:text="@{vm.recipe.takenTime + ` min`}"
+                            tools:text="20 min" />
 
                     </LinearLayout>
 
@@ -198,13 +207,15 @@
 
                     <LinearLayout
                         style="@style/RootLayout.Wrap"
+                        android:layout_weight="1"
                         android:gravity="center">
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:src="@drawable/ic_baseline_fastfood_24" />
+                            android:src="@drawable/ic_baseline_fastfood_24"
+                            app:tint="@color/secondary" />
 
                         <View
                             android:layout_width="0dp"
@@ -216,7 +227,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
-                            android:text="120 Calo" />
+                            android:text="@{vm.recipe.calories + ` calo`}"
+                            tools:text="120 Calo" />
 
                     </LinearLayout>
 

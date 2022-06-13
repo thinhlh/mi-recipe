@@ -53,6 +53,16 @@ public abstract class SystemHelper {
 
             ((Activity) context).getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         }
+
+        ((Activity) context).getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
+        View view = ((Activity) context).getCurrentFocus();
+        if (view != null) {
+            inputManager.hideSoftInputFromWindow(
+                    view.getWindowToken(),
+                    InputMethodManager.HIDE_NOT_ALWAYS
+            );
+        }
     }
 
     /**

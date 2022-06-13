@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
+            name="index"
+            type="Integer" />
+
+        <variable
             name="item"
-            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe" />
+            type="com.thinhlh.domain.repository.recipe.Recipe" />
     </data>
 
     <LinearLayout
@@ -20,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingHorizontal="@dimen/pad_M"
-            android:text="1" />
+            android:text="@{String.valueOf(index)}"
+            tools:text="1" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -33,14 +39,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_height="@dimen/_80sdp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/landing_3" />
+                    android:src="@{item.thumbnail}"
+                    tools:src="@drawable/landing_3" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -52,33 +60,38 @@
                     android:paddingVertical="@dimen/pad_M">
 
                     <TextView
-                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:text="Crispy za'atar chicken pilaf with promegranate"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Vegetarian • Spicy" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:layout_weight="1" />
-
-                    <TextView
                         style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="50 minutes cooking time for 2 people" />
+                        android:ellipsize="end"
+                        android:text="@{item.title}"
+                        android:textStyle="bold"
+                        tools:text="Crispy za'atar chicken pilaf with promegranate" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Overline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{ item.takenTime + ` minutes cooking time for ` + item.people + ` people`}"
+                        tools:text="50 minutes cooking time for 2 people" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{item.rating + `☆`}"
+                        tools:text="4.5 ☆" />
+
 
                 </LinearLayout>
 

@@ -12,4 +12,9 @@ public class BindingViewUtils {
     public static void setBackground(View view, @DrawableRes Integer res) {
         view.setBackground(ContextCompat.getDrawable(view.getContext(), res));
     }
+
+    @BindingAdapter("android:foreground")
+    public static void setForeground(View view, @DrawableRes Integer res) {
+        view.setForeground(ContextCompat.getDrawable(view.getContext(), res));
+    }
 }

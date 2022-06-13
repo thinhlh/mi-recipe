@@ -8,7 +8,7 @@ public interface BaseRepoCallback<T> {
     /**
      * Called while requesting api, default is show app loading
      */
-    default void apiRequesting(Boolean showLoading) {
+    default void apiRequesting(Boolean show) {
 
     }
 

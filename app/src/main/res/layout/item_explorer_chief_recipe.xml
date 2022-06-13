@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe" />
+            type="com.thinhlh.domain.repository.recipe.Recipe" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/radius_M"
         app:cardElevation="0dp"
-        tools:layout_marginBottom="@dimen/pad_M"
-        app:rippleColor="@android:color/transparent">
+        app:rippleColor="@android:color/transparent"
+        tools:layout_marginBottom="@dimen/pad_M">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,11 +28,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_150sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/imageHeight"
                     android:foreground="@drawable/fg_bottom_blur_dark"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/recipe_1" />
+                    android:src="@{item.thumbnail}"
+                    tools:src="@drawable/recipe_1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -58,7 +59,8 @@
                         android:background="@android:color/transparent"
                         android:text="203"
                         android:textColor="@color/surface"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="203" />
 
                     <View
                         android:layout_width="0dp"
@@ -78,9 +80,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/pad_S"
                         android:background="@android:color/transparent"
-                        android:text="50 minutes"
+                        android:text="@{item.takenTime + ` minutes`}"
                         android:textColor="@color/surface"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="50 minutes" />
                 </LinearLayout>
 
             </FrameLayout>
@@ -99,24 +102,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/surfaceSecondary"
-                    android:text="Tomato Pasta"
+                    android:text="@{item.title}"
+                    tools:text="Tomato Pasta"
                     android:textStyle="bold" />
 
                 <TextView
-                    style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                    android:id="@+id/categories_txt"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/pad_S"
                     android:background="@color/surfaceSecondary"
-                    android:text="Vegetarian • Spicy"
-                    android:textStyle="bold" />
+                    tools:text="Vegetarian • Spicy" />
 
                 <TextView
                     style="@style/TextAppearance.MdcTypographyStyles.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/surfaceSecondary"
-                    android:text="4.8 ☆" />
+                    android:text="@{item.rating + ` ☆`}"
+                    tools:text="4.8 ☆" />
 
             </LinearLayout>
 

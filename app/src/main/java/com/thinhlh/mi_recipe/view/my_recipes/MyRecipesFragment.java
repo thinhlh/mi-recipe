@@ -1,12 +1,13 @@
 package com.thinhlh.mi_recipe.view.my_recipes;
 
+import android.view.View;
+
 import com.google.android.material.divider.MaterialDividerItemDecoration;
 import com.thinhlh.mi_recipe.R;
-import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentMyRecipesBinding;
-import com.thinhlh.mi_recipe.view.dashboard.adapter.Recipe;
+import com.thinhlh.mi_recipe.view.create_recipe.CreateRecipeFragment;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
 
 import java.util.ArrayList;
@@ -43,18 +44,16 @@ public class MyRecipesFragment extends BaseFragment<FragmentMyRecipesBinding, My
 
     @Override
     protected void initData() {
-        recipeAdapter.submitList(new ArrayList<>() {{
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-            add(new Recipe("Title", "Subtitle", 200, "Thumbnail"));
-        }});
+        binding.text.setVisibility(View.VISIBLE);
     }
 
     @Override
     protected void initAction() {
 
+    }
+
+    @Override
+    public void createRecipe() {
+        getNavigator().goTo(new CreateRecipeFragment());
     }
 }

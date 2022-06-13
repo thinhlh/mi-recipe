@@ -8,4 +8,6 @@ import androidx.annotation.NonNull;
  */
 public interface BaseUserView {
     void showLoading(@NonNull Boolean show);
+
+    void onFragmentBackPressed();
 }

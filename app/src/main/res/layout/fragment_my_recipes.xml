@@ -61,8 +61,8 @@
                     tools:listitem="@layout/item_explorer_chief_recipe" />
 
                 <TextView
-                    android:visibility="gone"
-                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                    android:id="@+id/text"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -83,6 +83,7 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="@dimen/pad_L"
             android:contentDescription=""
+            android:onClick="@{()->vm.createRecipe()}"
             android:src="@drawable/ic_baseline_add_24"
             app:layout_anchorGravity="end|bottom"
             app:rippleColor="@color/transparent" />

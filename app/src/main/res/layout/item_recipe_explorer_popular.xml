@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.util.stream.Collectors" />
+
+        <import type="com.thinhlh.domain.repository.category.Category" />
+
+        <variable
+            name="item"
+            type="com.thinhlh.domain.repository.recipe.Recipe" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pad_L"
+        app:cardCornerRadius="@dimen/radius_L"
+        app:cardElevation="@dimen/cardview_default_elevation"
+        app:strokeColor="@color/textPrimary"
+        app:strokeWidth="0.5dp">
+
+        <LinearLayout style="@style/RootLayout.Secondary.WrapHeight">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@{item.thumbnail}"
+                    tools:src="@drawable/landing_1" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/pad_M"
+                    android:gravity="center">
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/surfaceSecondary"
+                        android:padding="@dimen/pad_S"
+                        android:text="240"
+                        android:textStyle="bold"
+                        app:drawableStartCompat="@drawable/ic_baseline_favorite_border_24" />
+                </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.Secondary.WrapHeight"
+                android:paddingHorizontal="@dimen/pad_M"
+                android:paddingVertical="@dimen/pad_M">
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/surfaceSecondary"
+                    android:text="@{item.title}"
+                    android:textStyle="bold"
+                    tools:text="Crispy za'atar chicken pilaf with promegranate" />
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/pad_S"
+                    android:background="@color/surfaceSecondary"
+                    android:text="@{ item.takenTime + ` minutes ` + item.people + ` people`}"
+                    tools:text="50 mins - 2 people" />
+
+                <TextView
+                    android:id="@+id/categories_txt"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/surfaceSecondary"
+                    android:textStyle="bold"
+                    tools:text="Vegetarian • Spicy" />
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_L"
+                    android:background="@color/surfaceSecondary"
+                    android:text="Review"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
+
