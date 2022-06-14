@@ -67,6 +67,8 @@ public class OthersFragment extends BaseFragment<FragmentOthersBinding, OthersVM
                 }));
             }}));
         }});
+
+        viewModel.getUserDetail();
     }
 
     @Override

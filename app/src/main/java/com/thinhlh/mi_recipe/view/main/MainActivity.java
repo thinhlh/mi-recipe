@@ -10,6 +10,8 @@ import com.thinhlh.mi_recipe.databinding.ActivityMainBinding;
 import com.thinhlh.mi_recipe.view.home.HomeFragment;
 import com.thinhlh.mi_recipe.view.landing.LandingFragment;
 import com.thinhlh.mi_recipe.view.login.LoginFragment;
+import com.thinhlh.utils.helper.AppPreferenceKeys;
+import com.thinhlh.utils.helper.AppPreferences;
 
 /**
  * Created by thinhlh on 06/03/2022.
@@ -23,7 +25,12 @@ public class MainActivity extends BaseFragmentBindingActivity<ActivityMainBindin
 
     @Override
     protected void initView() {
-        getNavigator().setRootFragment(new HomeFragment());
+        var token = AppPreferences.get().getString(AppPreferenceKeys.accessToken);
+        if (token == null) {
+            getNavigator().setRootFragment(new LandingFragment());
+        } else {
+            getNavigator().setRootFragment(new HomeFragment());
+        }
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.thinhlh.domain.api.services.CategoryService;
 import com.thinhlh.domain.api.services.CommonService;
 import com.thinhlh.domain.api.services.IngredientService;
 import com.thinhlh.domain.api.services.RecipeService;
+import com.thinhlh.domain.api.services.UserService;
 
 /**
  * Created by thinhlh on 3/1/2022.
@@ -18,4 +19,5 @@ public abstract class BaseApi extends BaseApiError {
     protected CategoryService categoryService = RetrofitService.get().createService(CategoryService.class);
     protected RecipeService recipeService = RetrofitService.get().createService(RecipeService.class);
     protected IngredientService ingredientService = RetrofitService.get().createService(IngredientService.class);
+    protected UserService userService = RetrofitService.get().createService(UserService.class);
 }
