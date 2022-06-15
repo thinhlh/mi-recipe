@@ -73,7 +73,7 @@ public class AppAlertDialog extends BaseDialog {
             );
 
             builder
-                    .setCancelable(cancellable)
+                    .setCancelable(cancellable == null)
                     .setView(binding.getRoot());
 
             // Setup binding values

@@ -6,6 +6,7 @@ import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
 import com.thinhlh.mi_recipe.databinding.FragmentExplorerCategoriesBinding;
+import com.thinhlh.mi_recipe.view.category.CategoryFragment;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class ExplorerCategoriesFragment extends BaseFragment<FragmentExplorerCat
     @Override
     protected void initView() {
         categoryAdapter = new CategoryAdapter((item, adapterPosition) -> {
-
+            getNavigator().goTo(new CategoryFragment(item));
         }, R.layout.item_explorer_category);
         binding.categoryRv.setAdapter(categoryAdapter);
 
@@ -49,6 +50,12 @@ public class ExplorerCategoriesFragment extends BaseFragment<FragmentExplorerCat
     @Override
     public void updateCategories(List<Category> categories) {
         categoryAdapter.submitList(categories);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initData();
     }
 
     @Override

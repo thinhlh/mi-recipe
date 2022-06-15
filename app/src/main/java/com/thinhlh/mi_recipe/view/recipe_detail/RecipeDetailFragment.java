@@ -95,7 +95,15 @@ public class RecipeDetailFragment extends BaseFragment<FragmentRecipeDetailBindi
             ingredientAdapter.submitList(recipe.getIngredients());
             binding.carousel.addData(new CarouselItem(recipe.getThumbnail()));
         }
+    }
 
+    @Override
+    public void updateSave(Boolean value) {
+        if (value) {
+            binding.recipeToggle.setImageResource(R.drawable.ic_baseline_bookmark_24);
+        } else {
+            binding.recipeToggle.setImageResource(R.drawable.ic_baseline_bookmark_border_24);
+        }
     }
 
     @Override

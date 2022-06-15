@@ -5,4 +5,6 @@ public enum GetRecipesType {
     POPULAR,
     TOP_RATINGS,
     CHIEF_CHOICE,
+    ME,
+    SAVED
 }

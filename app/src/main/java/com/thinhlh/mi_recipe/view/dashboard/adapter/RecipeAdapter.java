@@ -16,6 +16,7 @@ import com.thinhlh.mi_recipe.base.adapter.BaseBindingListAdapter;
 import com.thinhlh.mi_recipe.base.adapter.BaseBindingViewHolder;
 import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.databinding.ItemCategoryBinding;
+import com.thinhlh.mi_recipe.databinding.ItemCategoryRecipeBinding;
 import com.thinhlh.mi_recipe.databinding.ItemDashboardRecipeBinding;
 import com.thinhlh.mi_recipe.databinding.ItemExplorerChiefRecipeBinding;
 import com.thinhlh.mi_recipe.databinding.ItemGroupSettingBinding;
@@ -51,15 +52,16 @@ public class RecipeAdapter extends BaseBindingListAdapter<Recipe> {
     @Override
     public void onBindViewHolder(@NonNull BaseBindingViewHolder<Recipe> holder, int position) {
         super.onBindViewHolder(holder, position);
+        var categories = getCategoriesString(getItem(position).getCategories());
 
         if (holder.getBinding() instanceof ItemRecipeExplorerPopularBinding) {
-            var categories = getCategoriesString(getItem(position).getCategories());
             ((ItemRecipeExplorerPopularBinding) holder.getBinding()).categoriesTxt.setText(categories);
         } else if (holder.getBinding() instanceof ItemRecipeTopChartBinding) {
             ((ItemRecipeTopChartBinding) holder.getBinding()).setIndex(position + 1);
         } else if (holder.getBinding() instanceof ItemExplorerChiefRecipeBinding) {
-            var categories = getCategoriesString(getItem(position).getCategories());
             ((ItemExplorerChiefRecipeBinding) holder.getBinding()).categoriesTxt.setText(categories);
+        } else if (holder.getBinding() instanceof ItemCategoryRecipeBinding) {
+            ((ItemCategoryRecipeBinding) holder.getBinding()).categoriesTxt.setText(categories);
         }
     }
 

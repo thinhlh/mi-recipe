@@ -63,9 +63,11 @@
                         android:layout_weight="1" />
 
                     <ImageView
+                        android:id="@+id/recipe_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/transparent"
+                        android:onClick="@{()->vm.toggleSave()}"
                         android:src="@drawable/ic_baseline_bookmark_border_24"
                         app:tint="@color/surfaceSecondary" />
                 </LinearLayout>

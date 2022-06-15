@@ -6,16 +6,16 @@ public class CreateIngredient {
     private String id;
     private String title;
     private Integer quantity;
+    private String unit;
 
-    private Boolean isFinalIngredientInList = true;
-
-    public CreateIngredient(String id, String title, Integer quantity) {
+    public CreateIngredient(String id, String title, Integer quantity, String unit) {
         this.id = id;
         this.title = title;
         this.quantity = quantity;
+        this.unit = unit;
     }
 
-    public CreateIngredient(){
+    public CreateIngredient() {
 
     }
 
@@ -29,5 +29,25 @@ public class CreateIngredient {
 
     public Integer getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }

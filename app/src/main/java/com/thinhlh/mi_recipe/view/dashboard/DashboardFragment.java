@@ -5,6 +5,7 @@ import com.thinhlh.domain.repository.recipe.Recipe;
 import com.thinhlh.mi_recipe.R;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.databinding.FragmentDashboardBinding;
+import com.thinhlh.mi_recipe.view.category.CategoryFragment;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.CategoryAdapter;
 import com.thinhlh.mi_recipe.view.dashboard.adapter.RecipeAdapter;
 import com.thinhlh.mi_recipe.view.recipe_detail.RecipeDetailFragment;
@@ -38,7 +39,7 @@ public class DashboardFragment extends BaseFragment<FragmentDashboardBinding, Da
     @Override
     protected void initView() {
         categoryAdapter = new CategoryAdapter((item, adapterPosition) -> {
-
+            getNavigator().goTo(new CategoryFragment(item));
         }, R.layout.item_category);
 
         binding.categoryRv.setAdapter(categoryAdapter);

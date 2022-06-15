@@ -5,7 +5,6 @@ import android.content.Context;
 
 import androidx.lifecycle.LifecycleObserver;
 
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.thinhlh.utils.helper.AppPreferences;
@@ -42,7 +41,7 @@ public class App extends Application implements LifecycleObserver {
 
         // Disable Firebase Crashlytics in DEBUG mode
         if (com.orhanobut.logger.BuildConfig.DEBUG) {
-            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false);
+//            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false);
         }
 
         // Init notification utils

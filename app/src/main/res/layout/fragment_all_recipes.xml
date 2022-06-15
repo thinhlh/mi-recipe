@@ -20,6 +20,7 @@
             android:paddingHorizontal="@dimen/pad_M">
 
             <EditText
+                android:id="@+id/edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/pad_M"
@@ -36,136 +37,158 @@
                 tools:ignore="RtlSymmetry" />
 
             <LinearLayout
-                style="@style/RootLayout.WrapHeight"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
-                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quick Cook"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/quick_cook_rv"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Quick Cook"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recipe_small" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Premium"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/premium_rv"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recipe_small" />
+
+                <LinearLayout
+                    style="@style/RootLayout.WrapHeight"
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zero-Calories"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/no_calories_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_recipe_small" />
+
+
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/quick_cook_rv"
+                android:id="@+id/search_recipe_rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/pad_M"
-                android:orientation="horizontal"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/pad_L"
+                android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recipe_small" />
+                tools:listitem="@layout/item_category_recipe" />
 
-            <LinearLayout
-                style="@style/RootLayout.WrapHeight"
-                android:layout_marginTop="@dimen/pad_M"
-                android:gravity="center"
-                android:orientation="horizontal">
 
-                <TextView
-                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Premium"
-                    android:textStyle="bold" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+            <!--            <LinearLayout-->
+            <!--                style="@style/RootLayout.WrapHeight"-->
+            <!--                android:layout_marginTop="@dimen/pad_M"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+            <!--                <TextView-->
+            <!--                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Dessert"-->
+            <!--                    android:textStyle="bold" />-->
 
-            </LinearLayout>
+            <!--                <View-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="0dp"-->
+            <!--                    android:layout_weight="1" />-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/premium_rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/pad_M"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recipe_small" />
+            <!--                <ImageView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />-->
+            <!--            </LinearLayout>-->
 
-            <LinearLayout
-                style="@style/RootLayout.WrapHeight"
-                android:layout_marginTop="@dimen/pad_M"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Zero-Calories"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/no_calories_rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/pad_M"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recipe_small" />
-
-            <LinearLayout
-                style="@style/RootLayout.WrapHeight"
-                android:layout_marginTop="@dimen/pad_M"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dessert"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/dessert_rv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/pad_M"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recipe_small" />
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/dessert_rv"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/pad_M"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+            <!--                tools:listitem="@layout/item_recipe_small" />-->
         </LinearLayout>
 
 

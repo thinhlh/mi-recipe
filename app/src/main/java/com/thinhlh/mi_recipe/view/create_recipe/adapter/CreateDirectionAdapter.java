@@ -2,9 +2,12 @@ package com.thinhlh.mi_recipe.view.create_recipe.adapter;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.DiffUtil;
 
 import com.thinhlh.domain.repository.recipe.Direction;
@@ -20,10 +23,23 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import kotlin.collections.AbstractMutableList;
+
 public class CreateDirectionAdapter extends BaseBindingListAdapter<String> {
+
+    public final List<String> savedValues = new ArrayList<>();
 
     private Consumer<Integer> onAddItemClick;
     private Consumer<Integer> onRemoveItemClick;
+
+    @Override
+    public void submitList(@Nullable List<String> list) {
+        savedValues.clear();
+        if (list != null) {
+            savedValues.addAll(list);
+        }
+        super.submitList(list);
+    }
 
     private static class DiffUtilCallback extends DiffUtil.ItemCallback<String> {
 
@@ -82,21 +98,13 @@ public class CreateDirectionAdapter extends BaseBindingListAdapter<String> {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                getCurrentList().set(position, editable.toString());
+                savedValues.set(position, editable.toString());
             }
         });
     }
 
-    public List<Direction> getDirections() {
-        var result = new ArrayList<String>();
-        for (int i = 0; i < getItemCount(); i++) {
-            result.add(getItem(i));
-        }
-
-        return result
-                .stream()
-                .map((content) -> new Direction(content, null))
-                .collect(Collectors.toList());
+    public List<String> getDirections() {
+        return savedValues;
     }
 
     @Override

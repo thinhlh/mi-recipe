@@ -214,77 +214,77 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/pad_L" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/pad_L"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="@dimen/pad_XL">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="@dimen/pad_L"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingHorizontal="@dimen/pad_XL">-->
 
-                    <com.google.android.material.divider.MaterialDivider
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+<!--                    <com.google.android.material.divider.MaterialDivider-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1" />-->
 
-                    <TextView
-                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingHorizontal="@dimen/pad_L"
-                        android:text="Or Sign In With"
-                        android:textSize="@dimen/_12ssp" />
+<!--                    <TextView-->
+<!--                        style="@style/TextAppearance.MdcTypographyStyles.Caption"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingHorizontal="@dimen/pad_L"-->
+<!--                        android:text="Or Sign In With"-->
+<!--                        android:textSize="@dimen/_12ssp" />-->
 
-                    <com.google.android.material.divider.MaterialDivider
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
+<!--                    <com.google.android.material.divider.MaterialDivider-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingVertical="@dimen/pad_M"
-                        android:text="Facebook"
-                        app:backgroundTint="@color/facebook_background"
-                        app:cornerRadius="@dimen/radius_S"
-                        app:elevation="@dimen/pad_M"
-                        app:icon="@drawable/ic_facebook"
-                        app:iconSize="@dimen/pad_L"
-                        app:iconTint="@null" />
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:paddingVertical="@dimen/pad_M"-->
+<!--                        android:text="Facebook"-->
+<!--                        app:backgroundTint="@color/facebook_background"-->
+<!--                        app:cornerRadius="@dimen/radius_S"-->
+<!--                        app:elevation="@dimen/pad_M"-->
+<!--                        app:icon="@drawable/ic_facebook"-->
+<!--                        app:iconSize="@dimen/pad_L"-->
+<!--                        app:iconTint="@null" />-->
 
 
-                    <View
-                        android:layout_width="@dimen/pad_L"
-                        android:layout_height="0dp" />
+<!--                    <View-->
+<!--                        android:layout_width="@dimen/pad_L"-->
+<!--                        android:layout_height="0dp" />-->
 
-                    <com.google.android.material.button.MaterialButton
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:elevation="@dimen/elevation_M"
-                        android:paddingVertical="@dimen/pad_M"
-                        android:src="@drawable/ic_baseline_visibility_24"
-                        android:text="Google"
-                        android:textColor="@color/textPrimary"
-                        app:backgroundTint="@color/google_background"
-                        app:cornerRadius="@dimen/radius_S"
-                        app:icon="@drawable/ic_google"
-                        app:iconSize="@dimen/pad_L"
-                        app:iconTint="@null" />
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:elevation="@dimen/elevation_M"-->
+<!--                        android:paddingVertical="@dimen/pad_M"-->
+<!--                        android:src="@drawable/ic_baseline_visibility_24"-->
+<!--                        android:text="Google"-->
+<!--                        android:textColor="@color/textPrimary"-->
+<!--                        app:backgroundTint="@color/google_background"-->
+<!--                        app:cornerRadius="@dimen/radius_S"-->
+<!--                        app:icon="@drawable/ic_google"-->
+<!--                        app:iconSize="@dimen/pad_L"-->
+<!--                        app:iconTint="@null" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/pad_L" />
+<!--                <View-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/pad_L" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"

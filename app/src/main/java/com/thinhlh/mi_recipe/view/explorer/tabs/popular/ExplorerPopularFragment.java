@@ -106,24 +106,12 @@ public class ExplorerPopularFragment extends BaseFragment<FragmentExplorerPopula
 
             }
         });
+    }
 
-//        videoView.requestLayout();
-//        videoView.setClipToOutline(true);
-//        videoView.setZOrderOnTop(true);
-//        videoView.setVideoURI(Uri.parse("https://assets.mixkit.co/videos/preview/mixkit-placing-grilled-chicken-on-salad-26607-large.mp4"));
-//        videoView.setOnPreparedListener(mediaPlayer -> {
-//            this.mediaPlayer = mediaPlayer;
-//            binding.progressCircular.setVisibility(View.GONE);
-//            mediaPlayer.setOnVideoSizeChangedListener((mediaPlayer1, i, i1) -> {
-//                var mediaController = new MediaController(fragmentContext);
-//                videoView.setMediaController(mediaController);
-//                videoView.requestLayout();
-//
-//            });
-//            mediaPlayer.setVideoScalingMode(MediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT);
-//            mediaPlayer.setLooping(true);
-//            mediaPlayer.start();
-//        });
+    @Override
+    public void onResume() {
+        super.onResume();
+        viewModel.getAllPopularRecipes();
     }
 
     @Override

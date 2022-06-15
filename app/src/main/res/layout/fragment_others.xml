@@ -29,6 +29,8 @@
                 app:strokeWidth="@dimen/_1sdp">
 
                 <ImageView
+                    android:id="@+id/avatar"
+                    android:onClick="@{()->vm.showAvatarChosenDialog()}"
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="@dimen/_50sdp"
                     android:adjustViewBounds="true"

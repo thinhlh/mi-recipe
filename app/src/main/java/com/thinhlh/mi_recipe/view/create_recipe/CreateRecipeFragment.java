@@ -1,47 +1,42 @@
 package com.thinhlh.mi_recipe.view.create_recipe;
 
-import android.Manifest;
-import android.app.Application;
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
-import android.provider.MediaStore;
 
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.content.FileProvider;
 
 import com.google.android.material.divider.MaterialDividerItemDecoration;
-import com.thinhlh.domain.repository.recipe.Direction;
+import com.thinhlh.domain.repository.category.Category;
+import com.thinhlh.domain.repository.recipe.CreateRecipeRequest;
 import com.thinhlh.domain.repository.recipe.Ingredient;
+import com.thinhlh.domain.repository.recipe.Recipe;
 import com.thinhlh.mi_recipe.App;
 import com.thinhlh.mi_recipe.R;
-import com.thinhlh.mi_recipe.base.activity.RequestPermissionCallback;
-import com.thinhlh.mi_recipe.base.adapter.BaseItemClickListener;
 import com.thinhlh.mi_recipe.base.dialog.AlertDialogOnClickListener;
 import com.thinhlh.mi_recipe.base.dialog.AppAlertDialog;
 import com.thinhlh.mi_recipe.base.fragment.BaseFragment;
 import com.thinhlh.mi_recipe.base.widgets.SpacingItemDecoration;
+import com.thinhlh.mi_recipe.data.FirebaseStorageHelper;
 import com.thinhlh.mi_recipe.databinding.FragmentCreateRecipeBinding;
 import com.thinhlh.mi_recipe.view.create_recipe.adapter.CreateDirectionAdapter;
 import com.thinhlh.mi_recipe.view.create_recipe.adapter.CreateIngredient;
 import com.thinhlh.mi_recipe.view.create_recipe.adapter.CreateIngredientAdapter;
+import com.thinhlh.mi_recipe.view.create_recipe.adapter.CreateCategoryAdapter;
+import com.thinhlh.mi_recipe.view.home.HomeFragment;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBinding, CreateRecipeVM> implements CreateRecipeUV {
 
     private CreateIngredientAdapter createIngredientAdapter;
     private CreateDirectionAdapter createDirectionAdapter;
+    private CreateCategoryAdapter createCategoryAdapter;
 
     private Uri tempImageUri = null;
     private String tempImageAbsolutePath = null;
@@ -78,7 +73,7 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
 
     @Override
     protected void initData() {
-        viewModel.getIngredients();
+        viewModel.fetchData();
     }
 
     @Override
@@ -87,6 +82,32 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
     }
 
     private void initAdapters() {
+        initIngredientAdapter();
+        initCategoryAdapter();
+        initDirectionAdapter();
+    }
+
+    private void initCategoryAdapter() {
+        createCategoryAdapter = new CreateCategoryAdapter((item, adapterPosition) -> {
+        }, itemAddPosition -> {
+            var currentList = viewModel.createCategoryList.getValue();
+            if (currentList != null) {
+                currentList.add(new Category());
+            }
+        }, itemRemovePosition -> {
+            var currentList = viewModel.createCategoryList.getValue();
+            if (currentList != null && !currentList.isEmpty()) {
+                currentList.remove((int) itemRemovePosition);
+            }
+        });
+
+        binding.categoryRv.setAdapter(createCategoryAdapter);
+        binding.categoryRv.addItemDecoration(new SpacingItemDecoration(fragmentContext, MaterialDividerItemDecoration.VERTICAL, R.dimen.pad_M));
+
+        createCategoryAdapter.submitList(viewModel.createCategoryList.getValue());
+    }
+
+    private void initIngredientAdapter() {
         createIngredientAdapter = new CreateIngredientAdapter((item, adapterPosition) -> {
 
         }, itemAddPosition -> {
@@ -105,8 +126,9 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
         binding.ingredientRv.addItemDecoration(new SpacingItemDecoration(fragmentContext, MaterialDividerItemDecoration.VERTICAL, R.dimen.pad_M));
 
         createIngredientAdapter.submitList(viewModel.createIngredientList.getValue());
+    }
 
-
+    private void initDirectionAdapter() {
         createDirectionAdapter = new CreateDirectionAdapter((item, adapterPosition) -> {
 
         }, itemAddPosition -> {
@@ -114,18 +136,22 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
             if (currentList != null) {
                 currentList.add("");
             }
+
+            createDirectionAdapter.submitList(currentList);
+
         }, itemRemovePosition -> {
             var currentList = viewModel.createDirectionList.getValue();
             if (currentList != null && !currentList.isEmpty()) {
                 currentList.remove((int) itemRemovePosition);
             }
+
+            createDirectionAdapter.submitList(currentList);
         });
 
         binding.directionRv.setAdapter(createDirectionAdapter);
         binding.directionRv.addItemDecoration(new SpacingItemDecoration(fragmentContext, MaterialDividerItemDecoration.VERTICAL, R.dimen.pad_M));
 
         createDirectionAdapter.submitList(viewModel.createDirectionList.getValue());
-
     }
 
     @Override
@@ -134,13 +160,18 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
     }
 
     @Override
-    public String getRecipeTitle() {
+    public void updateCategories(List<Category> categories) {
+        createCategoryAdapter.addCategories(categories);
+    }
+
+    @Override
+    public String getRecipeTitle() throws Exception {
         var editable = binding.title.getText();
 
         if (editable == null || editable.toString().isEmpty()) {
             binding.title.setError("Title cannot be empty");
             viewModel.formCorrect.setValue(false);
-            return null;
+            throw new Exception();
         } else {
             viewModel.formCorrect.setValue(true);
             return editable.toString();
@@ -148,13 +179,13 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
     }
 
     @Override
-    public String getRecipeDescription() {
+    public String getRecipeDescription() throws Exception {
         var editable = binding.description.getText();
 
         if (editable == null || editable.toString().isEmpty()) {
             binding.title.setError("Description cannot be empty");
             viewModel.formCorrect.setValue(false);
-            return null;
+            throw new Exception();
         } else {
             viewModel.formCorrect.setValue(true);
             return editable.toString();
@@ -162,13 +193,13 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
     }
 
     @Override
-    public Integer getRecipeCalories() {
+    public Integer getRecipeCalories() throws Exception {
         var editable = binding.calories.getText();
 
         if (editable == null || editable.toString().isEmpty()) {
             binding.title.setError("Calories cannot be empty");
             viewModel.formCorrect.setValue(false);
-            return null;
+            throw new Exception();
         } else {
             var stringValue = editable.toString();
             viewModel.formCorrect.setValue(true);
@@ -177,13 +208,13 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
     }
 
     @Override
-    public Integer getRecipeTakenTime() {
+    public Integer getRecipeTakenTime() throws Exception {
         var editable = binding.takenTime.getText();
 
         if (editable == null || editable.toString().isEmpty()) {
             binding.title.setError("Taken time cannot be empty");
             viewModel.formCorrect.setValue(false);
-            return null;
+            throw new Exception();
         } else {
             var stringValue = editable.toString();
             viewModel.formCorrect.setValue(true);
@@ -192,13 +223,13 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
     }
 
     @Override
-    public Integer getPeople() {
+    public Integer getPeople() throws Exception {
         var editable = binding.people.getText();
 
         if (editable == null || editable.toString().isEmpty()) {
             binding.title.setError("For number of people cannot be empty");
             viewModel.formCorrect.setValue(false);
-            return null;
+            throw new Exception();
         } else {
             var stringValue = editable.toString();
             viewModel.formCorrect.setValue(true);
@@ -208,11 +239,24 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
 
     @Override
     public List<Ingredient> getIngredients() {
-        return new ArrayList<>();
+        return createIngredientAdapter
+                .getCurrentList()
+                .stream()
+                .map((it) -> new Ingredient(
+                        it.getId(),
+                        it.getTitle(),
+                        it.getQuantity(), it.getUnit())
+                )
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<Direction> getDirections() {
+    public List<Category> getCategories() {
+        return createCategoryAdapter.getCurrentList();
+    }
+
+    @Override
+    public List<String> getDirections() {
         return createDirectionAdapter.getDirections();
     }
 
@@ -245,8 +289,30 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
                     }
                 },
                 false,
-                true
+                false
         );
+    }
+
+    @Override
+    public void uploadThumbnail(CreateRecipeRequest request) {
+        showLoading(true);
+        FirebaseStorageHelper
+                .upload("/recipes/" + request.getTitle() + ".jpg", viewModel.selectedImageUri.getValue())
+                .addOnFailureListener(e -> {
+                    showLoading(false);
+                    showError(e.getMessage(), "Upload error", null, null, null, null);
+                })
+                .addOnSuccessListener(taskSnapshot -> {
+                    FirebaseStorageHelper
+                            .getDownloadLink(taskSnapshot.getMetadata().getPath())
+                            .addOnSuccessListener(uri -> {
+                                request.setThumbnail(uri.toString());
+                                viewModel.createRecipe(request);
+                            }).addOnFailureListener(e -> {
+                                showLoading(false);
+                                showError(e.getMessage(), "Get download link error error", null, null, null, null);
+                            });
+                });
     }
 
     private File createImageFile() throws IOException {
@@ -255,6 +321,18 @@ public class CreateRecipeFragment extends BaseFragment<FragmentCreateRecipeBindi
             return File.createTempFile("temp_image", ".jpg", storageDir);
         }
         return null;
+    }
 
+    @Override
+    public void onFragmentBackPressed(Recipe recipe) {
+        showLoading(false);
+        onFragmentBackPressed();
+        if (recipe != null) {
+            try {
+                ((HomeFragment) getNavigator().getActiveFragment()).getMyRecipeFragment().getNewRecipes();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

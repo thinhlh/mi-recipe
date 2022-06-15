@@ -51,9 +51,10 @@
                         android:layout_height="wrap_content"
                         android:background="@color/surfaceSecondary"
                         android:padding="@dimen/pad_S"
-                        android:text="240"
+                        android:text="@{String.valueOf(item.userSaved)}"
                         android:textStyle="bold"
-                        app:drawableStartCompat="@drawable/ic_baseline_favorite_border_24" />
+                        app:drawableStartCompat="@drawable/ic_baseline_favorite_border_24"
+                        tools:text="203" />
                 </com.google.android.material.card.MaterialCardView>
             </FrameLayout>
 

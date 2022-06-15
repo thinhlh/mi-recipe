@@ -16,14 +16,23 @@
         <entry key="app/src/main/res/drawable/bg_dash.xml" value="0.9" />
         <entry key="app/src/main/res/layout/bg_dash_line.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/dialog_message.xml" value="0.3770833333333333" />
-        <entry key="app/src/main/res/layout/fragment_create_recipe.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_all_recipes.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_category.xml" value="0.2815608263198164" />
+        <entry key="app/src/main/res/layout/fragment_change_password.xml" value="0.2222222222222222" />
+        <entry key="app/src/main/res/layout/fragment_create_recipe.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.22777777777777777" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.19166666666666668" />
         <entry key="app/src/main/res/layout/fragment_explorer_chief_choice.xml" value="0.3770833333333333" />
-        <entry key="app/src/main/res/layout/fragment_explorer_popular.xml" value="0.10191082802547771" />
+        <entry key="app/src/main/res/layout/fragment_explorer_popular.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_my_recipes.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_others.xml" value="0.36976506639427986" />
         <entry key="app/src/main/res/layout/fragment_recipe_detail.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_saved_recipe.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.3067708333333333" />
+        <entry key="app/src/main/res/layout/item_category_recipe.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_create_category.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_create_recipe_category.xml" value="0.36607142857142855" />
         <entry key="app/src/main/res/layout/item_create_recipe_direction.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_create_recipe_ingredient.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_dashboard_recipe.xml" value="0.3067708333333333" />

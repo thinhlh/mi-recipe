@@ -6,10 +6,11 @@ import com.google.gson.annotations.SerializedName;
 import com.thinhlh.domain.repository.category.Category;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class Recipe  implements Serializable {
+public class Recipe implements Serializable {
     @SerializedName("id")
     private String id;
 
@@ -42,6 +43,8 @@ public class Recipe  implements Serializable {
     @SerializedName("calories")
     private Double calories;
 
+    @SerializedName("userSaved")
+    private Integer userSaved;
 
 
     public String getTitle() {
@@ -86,5 +89,9 @@ public class Recipe  implements Serializable {
 
     public List<Ingredient> getIngredients() {
         return ingredients;
+    }
+
+    public Integer getUserSaved() {
+        return userSaved;
     }
 }

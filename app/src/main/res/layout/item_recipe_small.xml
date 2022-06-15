@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -24,7 +25,8 @@
                 android:adjustViewBounds="true"
                 android:clipToOutline="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/recipe_1" />
+                android:src="@{item.thumbnail}"
+                tools:src="@drawable/recipe_1" />
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
@@ -33,13 +35,15 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="Crispy za'atar chicken pilaf with promegranate" />
+            android:text="@{item.title}"
+            tools:text="Crispy za'atar chicken pilaf with promegranate" />
 
         <TextView
             style="@style/TextAppearance.MdcTypographyStyles.Caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="203 ☆" />
+            android:text="@{item.userSaved + ` ☆`}"
+            tools:text="203 ☆" />
 
 
     </LinearLayout>

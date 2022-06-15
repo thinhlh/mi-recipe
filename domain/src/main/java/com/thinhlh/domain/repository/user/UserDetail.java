@@ -28,6 +28,10 @@ public class UserDetail {
         return avatar;
     }
 
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public String getEmail() {
         return email;
     }

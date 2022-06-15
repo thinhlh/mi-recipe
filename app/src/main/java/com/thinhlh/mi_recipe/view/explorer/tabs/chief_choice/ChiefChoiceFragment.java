@@ -59,6 +59,12 @@ public class ChiefChoiceFragment extends BaseFragment<FragmentExplorerChiefChoic
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        initData();
+    }
+
+    @Override
     protected void initData() {
         viewModel.getChiefChoiceRecipes();
     }

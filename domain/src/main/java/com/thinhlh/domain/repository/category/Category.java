@@ -10,6 +10,9 @@ public class Category {
     @SerializedName("thumbnail")
     private String thumbnail;
 
+    public Category() {
+    }
+
     public Category(String id, String title, String thumbnail) {
         this.id = id;
         this.title = title;
@@ -26,5 +29,17 @@ public class Category {
 
     public String getThumbnail() {
         return thumbnail;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

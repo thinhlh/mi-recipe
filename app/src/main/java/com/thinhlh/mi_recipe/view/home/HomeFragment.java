@@ -80,8 +80,11 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeVM> impl
             }
             showOrAddFragment(binding.fragmentContainerViewTag.getId(), fragments.get(index));
 
-
             return true;
         });
+    }
+
+    public MyRecipesFragment getMyRecipeFragment() {
+        return (MyRecipesFragment) fragments.get(2);
     }
 }

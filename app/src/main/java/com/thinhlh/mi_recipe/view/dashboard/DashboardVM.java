@@ -26,7 +26,7 @@ public class DashboardVM extends BaseRepoViewModel<CategoryRepo, DashboardUV> {
 
             @Override
             public void apiResponse(BaseResponse<List<Category>> data) {
-                uiCallback.updateCategories(data.getData());
+                uiCallback.updateCategories(data.gMetData());
                 getPopularRecipes();
             }
         });
@@ -39,7 +39,7 @@ public class DashboardVM extends BaseRepoViewModel<CategoryRepo, DashboardUV> {
             @Override
             public void apiResponse(BaseResponse<List<Recipe>> data) {
                 var recipes = data.getData();
-                uiCallback.updatePopularRecipes(recipes.subList(0,Math.min(3,recipes.size())));
+                uiCallback.updatePopularRecipes(data.getData().subList(0,Math.min(3,data.getData().size())));
                 showLoading(false);
             }
         });

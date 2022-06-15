@@ -40,6 +40,12 @@ public class TopChartFragment extends BaseFragment<FragmentTopChartBinding, TopC
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        initData();
+    }
+
+    @Override
     protected void initData() {
         viewModel.getTopChartRecipes();
     }

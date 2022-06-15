@@ -16,6 +16,13 @@ public class Ingredient {
     @SerializedName("unit")
     private String unit;
 
+    public Ingredient(String id, String title, Integer quantity, String unit) {
+        this.id = id;
+        this.title = title;
+        this.quantity = quantity;
+        this.unit = unit;
+    }
+
     public Ingredient(String title, Integer quantity, String unit) {
         this.title = title;
         this.quantity = quantity;
@@ -32,6 +39,10 @@ public class Ingredient {
 
     public Integer getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public String getUnit() {

@@ -85,7 +85,8 @@
             android:drawablePadding="@dimen/pad_S"
             android:gravity="center"
             android:paddingHorizontal="@dimen/pad_S"
-            android:text="203"
+            tools:text="203"
+            android:text="@{String.valueOf(item.userSaved)}"
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/ic_baseline_favorite_border_24"
             app:drawableTint="@color/secondary" />

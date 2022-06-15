@@ -1,5 +1,7 @@
 package com.thinhlh.mi_recipe.view.others;
 
+import android.net.Uri;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.thinhlh.domain.api.base.BaseResponse;
@@ -11,6 +13,8 @@ import com.thinhlh.utils.helper.AppPreferenceKeys;
 import com.thinhlh.utils.helper.AppPreferences;
 
 public class OthersVM extends BaseRepoViewModel<UserRepo, OthersUV> {
+
+    public MutableLiveData<Uri> selectedImageUri = new MutableLiveData<>();
 
     public MutableLiveData<UserDetail> userDetail = new MutableLiveData<>();
 
@@ -32,6 +36,10 @@ public class OthersVM extends BaseRepoViewModel<UserRepo, OthersUV> {
                 userDetail.setValue(data.getData());
             }
         });
+    }
+
+    public void showAvatarChosenDialog() {
+        uiCallback.showAvatarChosenDialog();
     }
 
     @Override

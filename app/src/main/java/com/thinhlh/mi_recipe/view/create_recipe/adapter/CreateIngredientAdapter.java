@@ -70,7 +70,7 @@ public class CreateIngredientAdapter extends BaseBindingListAdapter<CreateIngred
 
         var binding = (ItemCreateRecipeIngredientBinding) holder.getBinding();
 
-        setUpSpinner(binding);
+        setUpSpinner(binding, position);
 
         if (position == getItemCount() - 1) {
             // Last item, then the end button is add
@@ -90,21 +90,43 @@ public class CreateIngredientAdapter extends BaseBindingListAdapter<CreateIngred
                 notifyDataSetChanged();
             });
         }
+
+        binding.ingredientQuantity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                try {
+                    getCurrentList().get(holder.getAbsoluteAdapterPosition()).setQuantity(Integer.parseInt(charSequence.toString()));
+                } catch (Exception e) {
+                    getCurrentList().get(holder.getAbsoluteAdapterPosition()).setQuantity(0);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
-    private void setUpSpinner(ItemCreateRecipeIngredientBinding binding) {
+    private void setUpSpinner(ItemCreateRecipeIngredientBinding binding, int position) {
 
         var adapter = new ArrayAdapter<Ingredient>(binding.actionBarSpinner.getContext(), R.layout.item_spinner) {
             @NonNull
             @Override
-            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            public View getView(int i, @Nullable View convertView, @NonNull ViewGroup parent) {
 
                 if (convertView == null) {
                     convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_spinner, parent, false);
                 }
                 TextView tv = convertView.findViewById(R.id.title);
 
-                tv.setText(getItem(position).getTitle());
+                tv.setText(getItem(i).getTitle());
 
                 return convertView;
             }
@@ -118,10 +140,13 @@ public class CreateIngredientAdapter extends BaseBindingListAdapter<CreateIngred
         binding.actionBarSpinner.setAdapter(adapter);
         binding.actionBarSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                var selectedItem = ingredients.get(position);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long id) {
+                var selectedItem = ingredients.get(i);
 
                 binding.unit.setText(selectedItem.getUnit());
+                getCurrentList().get(position).setId(selectedItem.getId());
+                getCurrentList().get(position).setTitle(selectedItem.getTitle());
+                getCurrentList().get(position).setUnit(selectedItem.getUnit());
             }
 
             @Override

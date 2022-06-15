@@ -37,10 +37,10 @@
                     app:cardPreventCornerOverlap="false">
 
                     <TextureView
-                        android:background="@null"
                         android:id="@+id/videoView"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/imageHeight" />
+                        android:layout_height="@dimen/imageHeight"
+                        android:background="@null" />
 
                     <ProgressBar
                         android:id="@+id/progress_circular"
@@ -73,7 +73,8 @@
                             android:background="@drawable/bg_rounded_surface_secondary_s"
                             android:clipToOutline="true"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/recipe_1" />
+                            android:src="@{vm.firstRecipe.thumbnail}"
+                            tools:src="@drawable/recipe_1" />
 
                         <LinearLayout
                             style="@style/RootLayout.Secondary.WrapHeight"
@@ -85,8 +86,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@color/surfaceSecondary"
-                                android:text="Crispy za'atar chicken pilaf with promegranate"
-                                android:textStyle="bold" />
+                                android:text="@{vm.firstRecipe.title}"
+                                android:textStyle="bold"
+                                tools:text="Crispy za'atar chicken pilaf with promegranate" />
 
                             <TextView
                                 style="@style/TextAppearance.MdcTypographyStyles.Body1"
@@ -94,7 +96,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/pad_S"
                                 android:background="@color/surfaceSecondary"
-                                android:text="50 mins - 2 people " />
+                                android:text="@{vm.firstRecipe.takenTime + ` mins - ` + vm.firstRecipe.people + ` people`}"
+                                tools:text="50 mins - 2 people " />
 
                             <TextView
                                 style="@style/TextAppearance.MdcTypographyStyles.Body2"
@@ -102,7 +105,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/pad_S"
                                 android:background="@color/surfaceSecondary"
-                                android:text="240 ♡" />
+                                android:text="@{vm.firstRecipe.userSaved +` ♡`}"
+                                tools:text="240 ♡" />
 
                         </LinearLayout>
 

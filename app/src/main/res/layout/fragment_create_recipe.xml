@@ -17,8 +17,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <LinearLayout
-            style="@style/RootLayout">
+        <LinearLayout style="@style/RootLayout">
 
             <LinearLayout
                 style="@style/RootLayout.WrapHeight"
@@ -38,9 +37,9 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:onClick="@{()->vm.onBackPressedClick()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="@{()->vm.onBackPressedClick()}"
                         android:src="@drawable/ic_baseline_arrow_back_24" />
 
                 </FrameLayout>
@@ -324,6 +323,29 @@
                     style="@style/TextAppearance.MdcTypographyStyles.Body1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Categories" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/category_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pad_M"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_create_recipe_category" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/RootLayout.WrapHeight"
+                android:layout_marginHorizontal="@dimen/pad_M"
+                android:layout_marginTop="@dimen/pad_M">
+
+                <TextView
+                    style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Ingredients" />
 
 
@@ -363,11 +385,11 @@
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
-                android:onClick="@{()->vm.createRecipe()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/pad_M"
                 android:layout_marginVertical="@dimen/pad_M"
+                android:onClick="@{()->vm.validateRecipe()}"
                 android:paddingVertical="@dimen/pad_MM"
                 android:text="Create Recipe" />
         </LinearLayout>

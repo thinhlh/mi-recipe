@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "745790272399",
+    "project_id": "mi-recipe",
+    "storage_bucket": "mi-recipe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745790272399:android:544dad13a669dba825d1fa",
+        "android_client_info": {
+          "package_name": "com.thinhlh.mi_recipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745790272399-4jtvla4vak7r0o4go7os97l94sauga5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANjgUqJg82jyHRRvAvBQyx45SHCKGADR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745790272399-4jtvla4vak7r0o4go7os97l94sauga5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

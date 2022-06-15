@@ -1,5 +1,7 @@
 package com.thinhlh.mi_recipe.view.explorer.tabs.popular;
 
+import androidx.lifecycle.MutableLiveData;
+
 import com.thinhlh.domain.api.base.BaseResponse;
 import com.thinhlh.domain.repository.base.BaseRepo;
 import com.thinhlh.domain.repository.base.BaseRepoCallback;
@@ -14,8 +16,10 @@ import java.util.List;
 
 public class ExplorerPopularVM extends BaseRepoViewModel<RecipeRepo, ExplorerPopularUV> {
 
+    public MutableLiveData<Recipe> firstRecipe = new MutableLiveData<>();
+
     void getAllPopularRecipes() {
-        getRepo().getRecipes(GetRecipesType.POPULAR, new BaseRepoCallback<BaseResponse<List<Recipe>>>() {
+        getRepo().getRecipes(GetRecipesType.POPULAR, new BaseRepoCallback<>() {
             @Override
             public void apiRequesting(Boolean show) {
                 showLoading(show);
@@ -23,7 +27,8 @@ public class ExplorerPopularVM extends BaseRepoViewModel<RecipeRepo, ExplorerPop
 
             @Override
             public void apiResponse(BaseResponse<List<Recipe>> data) {
-                uiCallback.updatePopularRecipes(data.getData());
+                firstRecipe.setValue(data.getData().stream().findFirst().orElse(null));
+                uiCallback.updatePopularRecipes(data.getData().subList(1, data.getData().size()));
             }
         });
     }
