@@ -26,7 +26,7 @@ public class DashboardVM extends BaseRepoViewModel<CategoryRepo, DashboardUV> {
 
             @Override
             public void apiResponse(BaseResponse<List<Category>> data) {
-                uiCallback.updateCategories(data.gMetData());
+                uiCallback.updateCategories(data.getData());
                 getPopularRecipes();
             }
         });
